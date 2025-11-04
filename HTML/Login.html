@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="Login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section class="picture">
+        <div class="displaypicture">
+            <div class="logo"></div>
+        </div>
+    </section>
+
+    <section class="login-section">
+        <div class="displayLogin">
+            <section class="text">
+                <div class="sun_circle"></div>
+                <h1>Login to Nekoma</h1>
+
+                <form id="login-form" novalidate>
+                    <label class="User" for="Username"></label>
+                    <input id="Username" name="Username" type="text" placeholder="Username" required>
+                    <label class="pass" for="Password"></label>
+                    <div class="pass">
+                        <input id="Password" name="Password" type="password" placeholder="Password" required>
+                    </div>
+                    <div class="help">
+                        <a class="Forgot" href="#">Forgot username or password?</a>
+                    </div>
+
+                    <div class="create">
+                        Create new account <a class="sign" href="#">sign in</a>
+                    </div>
+                    <div class="Log">
+                        <button type="submit" id="Login" class="btn">Login</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </section>
+</body>
+
+</html>
