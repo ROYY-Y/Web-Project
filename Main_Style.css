@@ -1,0 +1,33 @@
+body{
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+nav{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav div:hover{
+    cursor: pointer;
+}
+
+nav div{
+    border: 2px solid;
+    min-width: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nav-title{
+    font-size: 1.5em;
+    margin: 0;
+}
