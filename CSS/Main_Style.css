@@ -1,3 +1,4 @@
+/*เซ็ตระบบทั่วไป*/
 *{
     font-family: 'Nunito', sans-serif;
 }
@@ -7,6 +8,8 @@ body{
     display: flex;
     flex-direction: column;
 }
+
+/*กำหนดองค์ประกอบของ nav bar */
 
 nav{
     display: flex;
@@ -31,22 +34,61 @@ main{
     width: 200px;
     padding: 10px;
     border-radius: 25px;
+    transition: all .2s ease-in-out;
 }
-.nav-container:hover{
-    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.2);
-    cursor: pointer;
-}
+
 .nav-container h1{
     margin: 0;
     font-size: 1.5em;
 }
-.nav-container img{
-    height: 70px;
-    width: 120px;
-    display: inline-block;
-}
+
 nav div:nth-child(2) img{
     height: 70px;
     width: 140px;
     display: inline-block;
 }
+
+.nav-container img{
+    height: 70px;
+    width: 120px;
+    display: inline-block;
+    transition: all .15s linear;
+}
+
+/*Hover Effects*/
+
+.nav-container:hover{
+    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.nav-container-play:hover{
+    background-color: #c1ff72;
+    transform: translateY(-5px);
+    img {
+        filter: saturate(100%) invert(58%) sepia(89%) saturate(419%) hue-rotate(59deg);
+    }
+}
+.nav-container-collection:hover{
+    background-color: #fff896;
+    transform: translateY(-5px);
+    img {
+        filter: saturate(100%) invert(65%) sepia(61%) saturate(1611%) hue-rotate(339deg);
+    }
+}
+.nav-container-statistic:hover{
+    background-color: #7eeafd;
+    transform: translateY(-5px);
+    img {
+        filter: saturate(100%) invert(15%) sepia(14%) saturate(2304%) hue-rotate(198deg);
+    }
+}
+.nav-container-profile:hover{
+    background-color: #b4b4b4;
+    transform: translateY(-5px);
+    img {
+        filter: brightness(0) invert(1);;
+    }
+}
+
+
+/*กำหนดองค์ประกอบของ main section*/
