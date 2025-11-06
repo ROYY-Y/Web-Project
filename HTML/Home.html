@@ -6,6 +6,7 @@
     <title>Home - Nekoma</title>
     <link rel="stylesheet" href="../CSS/NavBar.css">
     <link rel="stylesheet" href="../CSS/Home.css">
+    <link rel="stylesheet" href="../CSS/Profile_PopUp.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -22,7 +23,7 @@
             <h1>STATISTIC</h1>
             <img src="../Img/Main/Logo_Statistic.png">
         </div> 
-        <div class = "nav-container nav-container-profile"> <!--Profile Box-->
+        <div class = "nav-container nav-container-profile" onclick="openPopup()"> <!--Profile Box-->
             <h1>PROFILE</h1>
             <img src="../Img/Main/Logo_Profile.png">
         </div>
@@ -113,6 +114,45 @@
             <img src="../Img/Main/cloud.png" id = "cloud1">
             <img src="../Img/Main/cloud.png" id = "cloud2">
         </section>
+
     </main>
+        <!--Create PROFILE !!!! POSITION ABSOLUTE-->
+    <section id = "profile-pop-up-main">
+
+        <section class="profile-pop-up-box profile-pop-up-main-left">
+            <h4>PROFILE</h4>
+            
+            <section id = "profile-info-container">
+                <div id = "profile-image-container">
+                    <div id = "profile-image"></div>
+                    <button id = "profile-edit-image-button">Edit profile</button>
+                </div>
+                <div id = "profile-info-main">
+                    <h6>Username: N/A</h6>
+                    <h6>Gmail: N/A</h6>
+                    <h6>Rank: N/A</h6>
+                </div>
+            </section>
+
+            <section id = "profile-change-password-conatiner">
+                <h5>Change password</h5>
+                <input class = "profile-change-input-box" id = "profile-current-pass" placeholder="Current password" type="password"></input>
+                <input class = "profile-change-input-box" id = "profile-new-pass" placeholder="New password" type="password"></input>
+                <input class = "profile-change-input-box" id = "profile-confirm-pass" placeholder="Confirm new password" type="password"></input>
+                <button id = "Confirm-pass-btn">Change password</button>
+            </section>
+            
+        </section>
+
+        <section class="profile-pop-up-box profile-pop-up-main-right">
+            <button class="close-btn" onclick="closePopup()" >&times;</button>
+            <img src="../Img/Login/catnekoma.png">
+            <button id = "log-out-button">Log out</button>
+            <img class = "Deco" id = "blue_poscard" src="../Img/Deco/blue_poscard.png">
+            <img class = "Deco" id = "red_poscard" src="../Img/Deco/red_poscard.png">
+        </section>
+        
+    </section>
+    <script src="../JAVASCRIPT/Main_Script.js"></script>
 </body>
 </html>
