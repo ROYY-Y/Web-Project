@@ -4,45 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login-NEKOMA</title>
     <link rel="stylesheet" href="../CSS/Login.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <section class="picture">
-        <div class="displaypicture">
-            <div class="logo"></div>
+<body> 
+    <div class="display">
+        <!-- กรอบของรูปภาพ -->
+        <div class="displayimg">
+            <div class="parentImg"><div class="img"><img src="../Img/Login/catnekoma.png"></div></div> 
+            <div class="fetishblue"><img src="../Img/Login/fetishbule.png"></div>
+            <div class="fetishred"><img src="../Img/Login/fetishred.png"></div>
         </div>
-    </section>
-
-    <section class="login-section">
+        <!-- กรอบของฝั่ง Login โดยจะแบ่งเปป็น 2 ส่วน มีLoginNEKO,onClick คือส่วนข้างล่างที่จะเขียน Forgot sign in Login โดยจะแบ่งเป็น 2ส่วน description กับ buttonLogin-->
         <div class="displayLogin">
-            <section class="text">
-                <div class="sun_circle"></div>
-                <h1>Login to Nekoma</h1>
-
-                <form id="login-form" novalidate>
-                    <label class="User" for="Username"></label>
-                    <input id="Username" name="Username" type="text" placeholder="Username" required>
-                    <label class="pass" for="Password"></label>
-                    <div class="pass">
-                        <input id="Password" name="Password" type="password" placeholder="Password" required>
-                    </div>
+            <div class="LoginNEKO">
+                <div class="circle"></div>
+                <div class="text">
+                    <h1>Login to Nekoma</h1>
+                </div>
+                <label class="User" for="Username"></label>
+                <input id="Username" name="Username" type="username" placeholder="Username" required>
+                <label class="pass" for="Password"></label>
+                <input id="Password" name="Password" type="password" placeholder="Password" required>
+            </div>
+            <div class="onClick">
+                <div class="description">
                     <div class="help">
                         <a class="Forgot" href="#">Forgot username or password?</a>
                     </div>
-
                     <div class="create">
                         Create new account <a class="sign" href="#">sign in</a>
                     </div>
+                </div>
+                <div class="buttonLogin">
                     <div class="Log">
                         <button type="submit" id="Login" class="btn">Login</button>
                     </div>
-                </form>
-            </section>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 </body>
 
 </html>

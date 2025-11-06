@@ -7,7 +7,6 @@ body{
     justify-content: center;
     align-items: center;
 }
-/* ตัวกำหนดหน้าจอทั้ง 2 ฝั่งของรูปและ login */
 .display{  
     display: flex;
     background-color: #feebf6;
@@ -15,7 +14,6 @@ body{
     width: 80%;
     gap: 25px;
 }
-/* ฝั่งกรอบของตัว image ใส่ position: relative เป็น “กรอบอ้างอิง” ให้ element ลูกที่ใช้ position: absolute;*/
 .displayimg{
     background-color: #ffffff;
     display: flex;
@@ -23,81 +21,67 @@ body{
     height: 100%;
     position: relative;
 }
-/* ฝั่งของกรอบ login */
-.displayLogin{
-    display: flex;
+.displaysign{
     background-color: #ffffff;
+    display: flex;
     flex-direction: column;
+    align-items: center;
     width: 50%;
     height: 100%;
 }
-.displayimg ,.displayLogin{
-    border-radius: 45px;
-}
-/* จะมาจัดกับของฝั่ง login ก่อนกำหนดให้อยู่ตรงกลางเป็น culumn */
-.LoginNEKO{
+.SignNEKOMA{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-/* ตัวของ sun */
-.circle{
-    border-radius: 100%;
-    background-color: #ff5757;
-    width: 100px;
-    height: 100px;
-    margin-top: 25px;
+.Entersign{
+    display: flex;
+    flex-direction: column;
 }
-/* text ข้อความ */
+.displayimg ,.displaysign{
+    border-radius: 45px;
+}
 .text{
     font-size: 20px;
 }
-/* มากำหนดกรอบของ username,password ขนาด */
-#Username,#Password{
+label{
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 60px;
+}
+#Entermail,#Enteruser,#password,#confirmpassword{
     width: 350px;
-    height: 60px;
+    height: 55px;
     border-radius: 50px;
     border: 3px solid;
     font-size: 20px;
 }
-/* ใส่ margin-top เพื่อให้เว้นพื้นที่ระหว่าง login กับ password */
-#Password{
-    margin-top: 30px;
-}
-/* เว้นระยะห่างของฟอนกับborderใน login,password โดยใช้ padding */
-input[type="username"], input[type="password"] {
+input[type="email"], input[type="username"] ,input[type="password"]{
     padding: 0 60px;
 }
-/* ส่วนของการจัดระเบียบของ forgot sign ที่อยู่ใน div describtion และ buttonLogin ที่ข้างในมี #login */
-.onClick{
+.correct{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    padding-right: 10px;
-    font-size: 15px;
 }
-.Forgot, .sign{
+input[type="checkbox"]{
+    width: 25px;
+    height: 25px;
+    margin-top: 11px;
+}
+.private, .privacy{
+    font-size: 16px;
+}
+.private{
+    padding-left: 10px;
+}
+.privacy{
     color: #5170ff;
+    text-decoration: underline;
+    padding-left: 8px;
 }
-/* เว้นระยะห่างจาก forgot */
-.create{
-    margin-top: 15px;
-}
-.sign{
-    padding-left: 15px;
-}
-.buttonLogin{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 100px;
-    margin-left: 30px;
-}
-#Login{
-    width: 150px;
-    height: 70px;
+#sign_in{
+    width: 120px;
+    height: 60px;
     border-radius: 50px;
     font-size: 20px;
     border: none;
@@ -105,16 +89,12 @@ input[type="username"], input[type="password"] {
     color: #ffffff;
     transition: all 0.5s ease-out;
 }
-
-#Login:hover{
+#sign_in:hover{
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
     cursor: pointer;
     background-color: #5170ff;
 }
-.btn{
-    cursor: pointer;
-}
-/* ตัวแม่ของ img เอามาจัดให้องประกอบเฉพะาะ img มาอยู่ตรงกลาง */
+
 .parentImg{
     display: flex;
     justify-content: center;

@@ -1,0 +1,112 @@
+body{
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.select{
+    display: flex;
+    background-color: #ffffff;
+    width: 90%;
+    height: 90%;
+    flex-direction: column;
+    align-items: center;
+}
+.text{
+    font-size: 20px;
+}
+.low-level{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.high-level{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 65%;
+    padding-top: 30px;
+}
+#N5,#N4,#N3,#N2,#N1{
+    border: 2px solid black;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 450px;
+    height: 260px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+    overflow:hidden;
+}
+#N5{
+    background-color: #cde8ff;
+    transition: all 0.5s ease-out;
+}
+#N4{
+    background-color: #cffae0;
+    transition: all 0.5s ease-out;
+}
+#N3{
+    background-color: #fff4c2;
+    transition: all 0.5s ease-out;
+}
+#N2{
+    background-color: #fcc0c5;
+    transition: all 0.5s ease-out;
+}
+#N1{
+    background-color: #e3d8ff;
+    transition: all 0.5s ease-out;
+}
+#N5:hover{
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+    cursor: pointer;
+    background-color:#9ecfff;
+}
+#N4:hover{
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+    cursor: pointer;
+    background-color:#93e6b8;
+}
+#N3:hover{
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+    cursor: pointer;
+    background-color:#ffd96b;
+}
+#N2:hover{
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+    cursor: pointer;
+    background-color:#f37b87;
+}
+#N1:hover{
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+    cursor: pointer;
+    background-color:#b29aff;
+}
+.level .pic{
+  position:absolute;
+  top:16px; 
+  left:16px; 
+  right:16px; 
+  bottom:64px;
+  display:flex; 
+  justify-content:center;
+}
+.level .pic img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+p{
+  position:absolute;
+  left:0; 
+  right:0; 
+  bottom:12px;
+  margin:0;
+  font-size: 40px;
+}
