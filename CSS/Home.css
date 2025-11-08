@@ -1,4 +1,3 @@
-/*กำหนด main และวาง layout main-box ซ้ายขวา*/
 main{
     display: flex;
     height: 100%;
