@@ -1,6 +1,6 @@
 /*Edit Profile pop up*/
 #profile-pop-up-main{
-    display: flex;
+    display: none;
     position: absolute;
     /*move it to center of body*/
     top: 50%;
