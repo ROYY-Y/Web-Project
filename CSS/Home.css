@@ -149,8 +149,8 @@ main{
 }
     /* Cloud animation*/
 #cloud1, #cloud2{
-    width: 20em;
-    height: 12em;
+    width: 16em;
+    height: 8em;
     background-image: url(../Img/Main/cloud.png);
     position: absolute;
 }
