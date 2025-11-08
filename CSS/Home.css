@@ -1,6 +1,7 @@
 /*กำหนด main และวาง layout main-box ซ้ายขวา*/
 main{
     display: flex;
+    height: 100%;
 }
 
 .home-box{
@@ -9,10 +10,10 @@ main{
 }
 
 .main-left{
-    border-right: 4px solid black;
+    outline: 4px solid black;
 }
 .main-right{
-    border-right: 4px solid black;
+    outline: 4px solid black;
 }
 
 /*---- inside main box left ----*/
@@ -20,6 +21,7 @@ main{
     display: flex;
     flex-direction: column;
    justify-content: space-around;
+    padding-left: 5em;
 }
     /*Title Section ------*/
 .main-left-container-text{
@@ -32,14 +34,13 @@ main{
 #main-left-title{
     font-size: 3.2em;
     margin: 0;
-    margin-left: 10%;
-    margin-top: 20px;
+
 }
 #main-left-text{
     margin: 0;
     font-size: 1.5em;
     font-weight: 100;
-    margin-left: 10%;
+
 }
 
 .main-left-container-card{
@@ -135,7 +136,7 @@ main{
 }
 
 .Nekoma-logo{
-    height: 100px;
+    height: 3em;
 
 }
 
@@ -148,51 +149,51 @@ main{
 }
     /* Cloud animation*/
 #cloud1, #cloud2{
-    width: 300px;
-    height: 220px;
+    width: 20em;
+    height: 12em;
     background-image: url(../Img/Main/cloud.png);
     position: absolute;
 }
 
 #cloud1{
-    top: 400px;
-    left: 600px;
+    top: 50%;
+    left: 50%;
     animation: c1 10s ease-in-out infinite alternate;
 }
 
 #cloud2{
-    left: 50px;
-    top: 100px;
+    left: 0%;
+    top: 20%;
     transform: scaleX(-1);
     animation: c2 10s ease-in-out infinite alternate;
 }
 
 @keyframes c2{
     0%{
-        left: 50px;
+        left: 0%;
     }
     30%{
-        left: 50px;
+        left: 0%;
     }
     70%{
-        left: 600px;
+        left: 60%;
     }
     100%{
-        left: 600px;
+        left: 60%;
     }
 }
 
 @keyframes c1{
     0%{
-        left: 600px;
+        left: 60%;
     }
     30%{
-        left: 600px;
+        left: 60%;
     }
     70%{
-        left: 50px;
+        left: 0%;
     }
     100%{
-        left: 50px;
+        left: 0%;
     }
 }
