@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
     padding-left: 5%;
-    gap: .5em;
+    justify-content: space-around;
     h4{ /*Profile title*/
         margin: 0;
         margin-top: .1em;
@@ -54,9 +54,9 @@
 }
 
 #profile-edit-image-button{
-    width: 70%;
-    height: 15%;
-    padding: 10%;
+    width: 80%;
+    height: 17%;
+    padding: 5%;
     background-color: #38b6ff;
     border-radius: 25px;
     border: 4px solid black;
@@ -64,7 +64,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2em;
+    font-size: 100%;
     font-weight: bold;
     transition: all .3s;
 }
@@ -120,7 +120,7 @@ input::placeholder {
     justify-content: center;
     align-items: center;
     width: 30%;
-    height: 30%;
+    height: 40%;
     background-color: #38b6ff;
     border-radius: 25px;
     font-size: 100%;
