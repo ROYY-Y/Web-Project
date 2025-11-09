@@ -1,0 +1,17 @@
+# ไม่ track node modules
+node_modules/
+
+# ไม่ track build output
+dist/
+build/
+
+# ไฟล์ env / secret
+.env
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
