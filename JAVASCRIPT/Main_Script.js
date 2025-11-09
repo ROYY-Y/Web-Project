@@ -6,7 +6,7 @@ fetch(`${serverAddr}/test-post`, {
     headers: {
         'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ username: "testUser", password: "testPass" })
+    body: JSON.stringify({ username: "Tk1nter4", password: "tk1nter1234" })
 })
 .then(response => response.json())
 .then(data => console.log(data.message))
