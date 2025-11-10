@@ -145,6 +145,7 @@ main{
     background-image: url(../Img/Main/Fuji_no_clound.png);
     background-size: cover;
     position: relative;
+    overflow: hidden;
 }
     /* Cloud animation*/
 #cloud1, #cloud2{

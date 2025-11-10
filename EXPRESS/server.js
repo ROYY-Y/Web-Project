@@ -30,31 +30,6 @@ db.connect((err) => { // Connect to the database
 // Finish setting up and connection
 
 
-app.post('/test-post', (req, res) => {
-    const {username, password} = req.body;
-    const insUser = 'INSERT INTO USER (username, userpassword) VALUES (?, ?)';
-    const insSTAT = 'INSERT INTO STAT (user_no,total_play, sum_correct, sum_wrong, stat_avg) VALUES (?, ?, ?, ?, ?)';
-    
-    db.query(insUser, [username, password], (err, result) => {
-        if(err){
-            console.error('Error inserting data:', err);
-            res.status(500).json({ message: 'Error inserting data' });
-        }
-        
-        const userId = result.insertId;
-        console.log('Inserted user with ID:', userId);
-        db.query(insSTAT, [userId, 0, 0, 0, 0.0], (err, result) => {
-            if(err){
-                console.error('Error inserting data into STAT:', err);
-                res.status(500).json({ message: 'Error inserting data into STAT' });
-            }
-
-            res.json({ message: 'User and STAT inserted successfully', userId: userId });
-        });
-        
-    });
-
-});
 
 
 
