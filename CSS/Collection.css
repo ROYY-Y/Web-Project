@@ -1,0 +1,107 @@
+main{
+    display: flex;
+    background-color: #fcc0c5;
+}
+.select-level{
+    width: 180px;
+    height: 500px;
+    background-color: rgb(255, 127, 127);
+    display: flex;
+    flex-direction: column;
+}
+.level-5, .level-4, .level-3, .level-2, .level-1{
+    width: 60px;
+    height: 50px;
+    margin-top: 20px;
+    border-bottom-right-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+}
+.level-5{
+    background-color: #cde8ff;
+}
+.level-4{
+    background-color: #cffae0;
+}
+.level-3{
+    background-color: #fff4c2;
+}
+.level-2{
+    background-color: #fcc0c5;
+}
+.level-1{
+    background-color: #e3d8ff;
+}
+.all-collection{
+    display: flex;
+    justify-content: center;
+    width: 1400px;
+    height: auto;
+}
+.collection{
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    height: auto;
+    background-color: brown;
+}
+.head{
+    display: flex;
+    width: 100%;
+    height: 120px;
+}
+.left-head{
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+.rigth-head{
+    display: flex;
+    width: 50%;
+    height: 100%;
+}
+.title-level-1, .title-level-2, .title-level-3 ,.title-level-4, .title-level-5{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    width: 220px;
+    height: 70%;
+    border-radius: 40px;
+    border: 2px solid black;
+    justify-content: center;
+    gap: 60px;
+}
+.title-level-5{
+    background-color: #cde8ff;
+}
+.title-level-4{
+    background-color: #cffae0;
+}
+.title-level-3{
+    background-color: #fff4c2;
+}
+.title-level-2{
+    background-color: #fcc0c5;
+}
+.title-level-1{
+    background-color: #e3d8ff;
+}
+.img_N{
+    width: 60px;
+    height: 60px;
+}
+.img_N img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.right-head{
+    display: flex;
+    justify-content: end;
+    width: 50%;
+    height: 100%;
+    margin-top: 20px;
+}
+.Allcard-n5{
+    width: auto;
+    height: 300px;
+}

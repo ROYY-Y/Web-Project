@@ -2,16 +2,18 @@ main{
     justify-content: center;
 
 }
+/* จัดให้เนื้อหาข้างในกล่องเป็น culumn เพื่อจัดการง่าย */
 .box-stat{
     margin-top: 35px;
     background-color: #ffffff;
     width: 400px;
-    height: 450px;
+    height: 500px;
     border: 4px solid black;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
 }
+/* จัดส่วนของหัวข้อ statistics */
 .text{
     margin-top: 12px;
     margin-left: 12px;
@@ -24,4 +26,41 @@ main{
     font-size: 25px;
     border: 3px solid rgb(0, 0, 0);
     border-radius: 50px;
+}
+/* ส่วนของแต่ละกล่อง stat */
+.play, .word, .remember, .missing, .average{
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+    margin-left: 18px;
+}
+.listplay, .listword, .listremember, .listmissing, .listaverage{
+    display: flex;
+    width: 100px;
+    height: 80px;
+    align-items: center;
+}
+.total-play, .total-word, .remember-word, .missing-word, .average-score{
+    display: flex;
+    width: 180px;
+    height: 50px;
+    align-items: center;
+    font-weight: 900;
+}
+.numtotal-paly, .numtotal-word, .numremember-word, .nummissing-word, .numaverage-score{
+    display: flex;
+    width: 100px;
+    height: 50px;
+    align-items: center;
+    font-weight: 900;
+}
+/* จัดรูปให้อยู่ในกล่อง */
+.iconplay, .iconword, .iconremember, .iconmissing, .iconaverage{
+    width: 80px;
+    height: 80px;
+}
+.iconplay img, .iconword img, .iconremember img, .iconmissing img, .iconaverage img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
