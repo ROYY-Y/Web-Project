@@ -7,8 +7,8 @@ main{
 .main-sec{
     width: 50%;
     flex: 1;
-    padding-left: 5em;
-    padding-top: 2em;
+    padding-left: 3em;
+    padding-top: 2%;
 }
 
 
@@ -16,10 +16,10 @@ main{
     width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    gap: 2%;
     h2{
         margin: 0;
-        font-size: 2.5em;
+        font-size: 1.5em;
     }
 }
 
@@ -118,6 +118,6 @@ main{
     padding-right: 5em;
     h2{
         margin: 0;
-        font-size: 2.5em;
+        font-size: 1.5em;
     }
 }
