@@ -1,136 +1,147 @@
-/* ทำให้ทุกเครื่อง render ใกล้เคียงกัน */
-*{
-    box-sizing: border-box;
-    line-height: 1.2;
-}
-
-/* main layout */
-main{
+/* =======================
+   MAIN
+   =======================*/
+main {
     flex: 1;
     display: flex;
-    overflow-y: scroll;
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
 }
 
-/* LEFT */
-.main-sec{
-    width: 50%;
-    padding-left: 48px; /* 3em → px */
-    padding-top: 16px;  /* 2% → px เพื่อไม่ให้ผันผวนกับจอ */
+/* ==== Main Section ==== */
+
+.main-sec {
+    height: auto;
+    flex: 1;
+    padding-left: 5em;
+    padding-top: 1em;
+    display: flex;
 }
 
-/* main-left */
-.main-left{
-    width: 60%; 
+/* =======================
+   LEFT SIDE
+   =======================*/
+
+.main-left h2 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.main-left {
     display: flex;
     flex-direction: column;
-    gap: 16px; /* em → px */
-}
-.main-left h2{
-    margin: 0;
-    font-size: 24px;
-}
-
-/* profile info section */
-.profile-info-box{
+    gap: 2.5em;
     width: 100%;
-    height: 300px; /* fix เพื่อให้ render เท่ากันทุก OS */
-    display: flex;
-    gap: 48px; /* 3em → px */
 }
 
-/* image section */
-.profile-info-img{
-    width: 30%; /* 25% อาจทำ layout เบี้ยวในบาง font */
+/* Profile info box layout */
+.profile-info-box {
+    width: 100%;
+    display: flex;
+    gap: 3em;
+    flex-wrap: wrap;       /* สำคัญมาก — กัน flex แตกใน Windows */
+    align-items: flex-start;
+}
+
+.profile-info-img {
+    flex: 0 0 230px;       /* จากเดิม width 25% → fixed min width */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px; /* 2em → px */
+    gap: 2em;
 }
 
-#profile-info-img-box{
-    width: 80%;
-    height: 180px; /* 60% → px เพื่อ fix layout */
+#profile-info-img-box {
+    width: 100%;
+    height: 230px;
     border: 4px solid black;
     background-image: url(../Img/Main/Fuji.png);
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
 }
 
-#profile-info-img-btn{
-    width: 80%;
-    padding: 8px 0;
+#profile-info-img-btn {
+    padding: 0.3em 2em;
     color: white;
     font-weight: bold;
     border: 3px solid black;
     background-color: #38b6ff;
     border-radius: 25px;
-    font-size: 16px;
+    font-size: 1.1em;
     transition: all .2s ease-in-out;
 }
-#profile-info-img-btn:hover{
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+#profile-info-img-btn:hover {
     cursor: pointer;
     background-color: #46b1db;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* text part */
-.profile-info-text{
-    height: 100%;
-    width: 60%;
+/* Profile text */
+.profile-info-text {
+    flex: 1;              /* จาก width 60% → ยืดอัตโนมัติ */
     display: flex;
     flex-direction: column;
-    gap: 32px; /* 2.5em → px */
+    justify-content: center;
+    gap: 2em;
 }
-.profile-info-text h3{
+
+.profile-info-text h3 {
+    font-size: 1.3em;
     margin: 0;
-    font-size: 24px;
 }
 
-/* password change */
-.change-pass-box{
+/* Change password box */
+
+.change-pass-box {
     display: flex;
     flex-direction: column;
-    gap: 24px; /* px */
+    gap: 1.5em;
+    max-width: 400px;      /* ป้องกันยืดเกินในจอใหญ่ */
 }
 
-.change-pass-input{
-    width: 300px; /* fixed width */
-    height: 40px;
-    font-size: 18px;
+.change-pass-input {
+    width: 100%;
+    height: 2.2em;
+    font-size: 1.2em;
     border: 2px solid black;
     border-radius: 15px;
-    padding-left: 20px;
+    padding-left: 1.5em;
 }
 
-.change-pass-input:focus{
+.change-pass-input:focus {
     outline: 3px solid #38b6ff;
 }
 
-#change-pass-btn{
-    width: 200px;
-    padding: 8px 0;
+#change-pass-btn {
+    width: 50%;
+    padding: 0.3em 1em;
     color: white;
     font-weight: bold;
     border: 3px solid black;
     background-color: #38b6ff;
     border-radius: 25px;
-    font-size: 18px;
+    font-size: 1.1em;
     transition: all .2s ease-in-out;
 }
-#change-pass-btn:hover{
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+#change-pass-btn:hover {
     cursor: pointer;
     background-color: #46b1db;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* RIGHT */
-.main-right{
+/* =======================
+   RIGHT SIDE
+   =======================*/
+
+.main-right {
     display: flex;
     flex-direction: column;
-    padding-right: 80px; /* 5em → px */
+    padding-right: 5em;
 }
 
-.main-right h2{
+.main-right h2 {
     margin: 0;
-    font-size: 24px;
+    font-size: 2.5em;
 }
