@@ -1,4 +1,122 @@
 main{
     flex: 1;
     display: flex;
+    overflow: hidden;
+}
+
+.main-sec{
+    width: 50%;
+    flex: 1;
+    padding-left: 5em;
+    padding-top: 2em;
+}
+
+
+.main-left{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    h2{
+        margin: 0;
+        font-size: 2.5em;
+    }
+}
+
+/* จัดการ element ข้างใน main-left ทั้งหมด */
+
+.profile-info-box{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    gap: 3em;
+}
+
+.profile-info-img{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    #profile-info-img-box{
+        width: 100%;
+        height: 60%;
+        border: 4px solid black;
+        background-image: url(../Img/Main/Fuji.png);
+        background-size: 100% 100%;
+        
+    }
+
+    #profile-info-img-btn{
+        padding: 0.3em 2em;
+        color: white;
+        font-weight: bold;
+        border: 3px solid black;
+        background-color: #38b6ff;
+        border-radius: 25px;
+        font-size: 1.1em;
+        transition: all .2s ease-in-out;
+    }
+}
+#profile-info-img-btn:hover{
+    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.2);
+    cursor: pointer;
+    background-color: #46b1db;
+}
+
+.profile-info-text{
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+    h3{
+        margin: 0;
+        font-size: 1.5em;
+    }
+}
+
+.change-pass-box{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+
+}
+.change-pass-input{
+    width: 50%;
+    height: 2em;
+    font-size: 1.2em;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding-left: 1.5em;
+}
+.change-pass-input:focus{
+    outline: 3px solid #38b6ff;
+}
+#change-pass-btn{
+    width: 30%;
+    padding: 0.3em 2em;
+    color: white;
+    font-weight: bold;
+    border: 3px solid black;
+    background-color: #38b6ff;
+    border-radius: 25px;
+    font-size: 1.1em;
+    transition: all .2s ease-in-out;
+}
+#change-pass-btn:hover{
+    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.2);
+    cursor: pointer;
+    background-color: #46b1db;
+}
+
+/* จัดการ element ข้างใน main-right ทั้งหมด */
+.main-right{
+    display: flex;
+    flex-direction: column;
+    padding-right: 5em;
+    h2{
+        margin: 0;
+        font-size: 2.5em;
+    }
 }
