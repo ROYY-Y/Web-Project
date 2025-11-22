@@ -8,9 +8,8 @@ body{
     display: flex;
     flex-direction: column;
     position: relative;
-    overflow: hidden;
-}
 
+}
 /*กำหนดองค์ประกอบของ nav bar */
 
 nav{
