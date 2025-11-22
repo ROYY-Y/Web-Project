@@ -48,13 +48,14 @@ main{
     }
 
     #profile-info-img-btn{
+        width: 100%;
         padding: 0.3em 2em;
         color: white;
         font-weight: bold;
         border: 3px solid black;
         background-color: #38b6ff;
         border-radius: 25px;
-        font-size: 1.1em;
+        font-size: 1em;
         transition: all .2s ease-in-out;
     }
 }
@@ -94,7 +95,7 @@ main{
     outline: 3px solid #38b6ff;
 }
 #change-pass-btn{
-    width: 30%;
+    width: 40%;
     padding: 0.3em 2em;
     color: white;
     font-weight: bold;
