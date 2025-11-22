@@ -19,3 +19,8 @@ function openPopup(){
 function closePopup(){
     popUpMain.style.display = "none";
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+    const token = localStorage.getItem('token');
+    console.log("Token on home page:", token);
+});
