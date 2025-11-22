@@ -1,123 +1,136 @@
+/* ทำให้ทุกเครื่อง render ใกล้เคียงกัน */
+*{
+    box-sizing: border-box;
+    line-height: 1.2;
+}
+
+/* main layout */
 main{
     flex: 1;
     display: flex;
     overflow: hidden;
 }
 
+/* LEFT */
 .main-sec{
     width: 50%;
-    flex: 1;
-    padding-left: 3em;
-    padding-top: 2%;
+    padding-left: 48px; /* 3em → px */
+    padding-top: 16px;  /* 2% → px เพื่อไม่ให้ผันผวนกับจอ */
 }
 
-
+/* main-left */
 .main-left{
-    width: 60%;
+    width: 60%; 
     display: flex;
     flex-direction: column;
-    gap: 2%;
-    h2{
-        margin: 0;
-        font-size: 1.5em;
-    }
+    gap: 16px; /* em → px */
+}
+.main-left h2{
+    margin: 0;
+    font-size: 24px;
 }
 
-/* จัดการ element ข้างใน main-left ทั้งหมด */
-
+/* profile info section */
 .profile-info-box{
     width: 100%;
-    height: 40%;
+    height: 300px; /* fix เพื่อให้ render เท่ากันทุก OS */
     display: flex;
-    gap: 3em;
+    gap: 48px; /* 3em → px */
 }
 
+/* image section */
 .profile-info-img{
-    width: 25%;
+    width: 30%; /* 25% อาจทำ layout เบี้ยวในบาง font */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2em;
-    #profile-info-img-box{
-        width: 100%;
-        height: 60%;
-        border: 4px solid black;
-        background-image: url(../Img/Main/Fuji.png);
-        background-size: 100% 100%;
-        
-    }
-
-    #profile-info-img-btn{
-        width: 100%;
-        padding: 0.3em 2em;
-        color: white;
-        font-weight: bold;
-        border: 3px solid black;
-        background-color: #38b6ff;
-        border-radius: 25px;
-        font-size: 1em;
-        transition: all .2s ease-in-out;
-    }
-}
-#profile-info-img-btn:hover{
-    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.2);
-    cursor: pointer;
-    background-color: #46b1db;
+    gap: 24px; /* 2em → px */
 }
 
-.profile-info-text{
-    height: 100%;
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5em;
-    h3{
-        margin: 0;
-        font-size: 1.5em;
-    }
+#profile-info-img-box{
+    width: 80%;
+    height: 180px; /* 60% → px เพื่อ fix layout */
+    border: 4px solid black;
+    background-image: url(../Img/Main/Fuji.png);
+    background-size: 100% 100%;
+    background-position: center;
 }
 
-.change-pass-box{
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-
-}
-.change-pass-input{
-    width: 50%;
-    height: 2em;
-    font-size: 1.2em;
-    border: 2px solid black;
-    border-radius: 15px;
-    padding-left: 1.5em;
-}
-.change-pass-input:focus{
-    outline: 3px solid #38b6ff;
-}
-#change-pass-btn{
-    width: 40%;
-    padding: 0.3em 2em;
+#profile-info-img-btn{
+    width: 80%;
+    padding: 8px 0;
     color: white;
     font-weight: bold;
     border: 3px solid black;
     background-color: #38b6ff;
     border-radius: 25px;
-    font-size: 1.1em;
+    font-size: 16px;
     transition: all .2s ease-in-out;
 }
-#change-pass-btn:hover{
-    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.2);
+#profile-info-img-btn:hover{
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     cursor: pointer;
     background-color: #46b1db;
 }
 
-/* จัดการ element ข้างใน main-right ทั้งหมด */
+/* text part */
+.profile-info-text{
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /* 2.5em → px */
+}
+.profile-info-text h3{
+    margin: 0;
+    font-size: 24px;
+}
+
+/* password change */
+.change-pass-box{
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* px */
+}
+
+.change-pass-input{
+    width: 300px; /* fixed width */
+    height: 40px;
+    font-size: 18px;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding-left: 20px;
+}
+
+.change-pass-input:focus{
+    outline: 3px solid #38b6ff;
+}
+
+#change-pass-btn{
+    width: 200px;
+    padding: 8px 0;
+    color: white;
+    font-weight: bold;
+    border: 3px solid black;
+    background-color: #38b6ff;
+    border-radius: 25px;
+    font-size: 18px;
+    transition: all .2s ease-in-out;
+}
+#change-pass-btn:hover{
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+    background-color: #46b1db;
+}
+
+/* RIGHT */
 .main-right{
     display: flex;
     flex-direction: column;
-    padding-right: 5em;
-    h2{
-        margin: 0;
-        font-size: 1.5em;
-    }
+    padding-right: 80px; /* 5em → px */
+}
+
+.main-right h2{
+    margin: 0;
+    font-size: 24px;
 }
