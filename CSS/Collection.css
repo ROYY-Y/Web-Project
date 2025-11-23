@@ -93,7 +93,6 @@ main{
 .title-img{
     width: 25%;
     height: 80%;
-    background-image: url(../Img/Select/N5.png);
     background-size: 100% 100%;
 }
 
@@ -118,7 +117,65 @@ main{
 }
 
 
-.cards{
+/* สีพื้นของแต่ละระดับ N5-N1 */
+/*title*/
+.title-N5{
+    background-color: #cde8ff;
+}
+
+.title-N4{
+    background-color: #9ef2c8;
+}
+
+.title-N3{
+    background-color: #ffe999;
+}
+.title-N2{
+    background-color: #fa9aa0;
+}
+.title-N1{
+    background-color: #c6baff;
+}
+
+/*สีของพื้นหลังแต่ละระดับ*/
+#N5-grid{
+    background-color: #e4f2fd;
+}
+#N4-grid{
+    background-color: #e6fff4;
+}
+#N3-grid{
+    background-color: #fffbea;
+}
+#N2-grid{
+    background-color: #ffe1e3;
+}
+#N1-grid{
+    background-color: #f0e8ff;
+}
+
+/*title-img url*/
+.title-N5-img{
+    background-image: url(../Img/Select/N5.png);
+}
+.title-N4-img{
+    background-image: url(../Img/Select/N4.png);
+}
+.title-N3-img{
+    background-image: url(../Img/Select/N3.png);
+}
+.title-N2-img{
+    background-image: url(../Img/Select/N2.png);
+}
+.title-N1-img{
+    background-image: url(../Img/Select/N1.png);
+}
+
+
+
+/* Card ทั้งหมด */
+
+.cards{ /*ส่วนของการ์ดพื้นหลัง*/
     width: 13.5rem;
     height: 18rem;
     background-image: url(../Img/card/back_card.png);
@@ -128,7 +185,7 @@ main{
     align-items: center;
 }
 
-.cards-background{
+.cards-background{ /*ด้านในการ์ดทั้งหมด*/
     position: relative;
     bottom: 1.5%;
     width: 76%;
@@ -143,8 +200,8 @@ main{
         margin: 0;
         font-size: .8em;
     }
-    .card-img{
-        background-color: orange;
+    .card-img{ /*รูปของการ์ด*/
+
         width: 80%;
         height: 50%;
         background-size: 100% 100%;
