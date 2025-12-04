@@ -146,44 +146,105 @@ main {
     font-size: 2em;
 }
 
-.picture{
+.picture {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
-    background-color: #38b6ff;
+    min-height: 600px; 
+    overflow: hidden;
+    background-color: #90cbe2;
+    border-bottom: 15px solid #FFE4E1;
 }
-.neko{
-    width: 400px;
-    height: 400px;
+
+.neko {
+    width: 80%;
+    max-width: 25rem;
+    height: auto;    
+    aspect-ratio: 1 / 1; 
 }
-.neko img{
+
+.neko img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.blue{
-    width: 120px;
-    height: 120px;
-    inset-inline-start: 200px;
+
+.blue, .red {
+    position: absolute;
+    left: 55%; 
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
-.red{
-    width: 20px;
-    height: 20px;
-    inset-inline-start: 200px;
+
+.blue {
+    width: 7.5rem;
+    height: 7.5rem;
+    margin-left: -14rem; 
+    margin-top: -16rem;
+    z-index: 1;
 }
-.blue, .red{
-  position: absolute;    
+
+.red {
+    width: 7.5rem;
+    height: 7.5rem;
+    margin-left: -6rem;
+    margin-top: -15rem;
+}
+.red img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .blue img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+.box {
+    width: 98.5%;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: rem;
+    flex-wrap: wrap;
+    border: 5px solid #FFF0E5;
+    background-color: #FDF5E6;
+}
 
-.img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.log {
+    width: 12rem;
+    padding: 0.7em 0;
+    text-align: center;
+    border-radius: 30px;
+    
+    background-color: azure;
+    border: 3px solid black;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+}
+.Dea{
+    width: 8rem;
+    padding: 0.7em 0;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: red;
+    transition: all 0.3s ease-in-out;
+}
+.Dea:hover{
+     text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 1.9px;
+    cursor: pointer;
+}
+.log:hover{
+    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.2);
+    cursor: pointer;
+    color: aliceblue;
+    background-color: rgb(210, 48, 48);
 }
