@@ -10,7 +10,7 @@ body{
 .display{  
     display: flex;
     background-color: #feebf6;
-    height: 80%;
+    height: 90%;
     width: 80%;
     gap: 25px;
 }
@@ -28,6 +28,7 @@ body{
     align-items: center;
     width: 50%;
     height: 100%;
+    justify-content: center;
 }
 .SignNEKOMA{
     display: flex;
@@ -43,11 +44,14 @@ body{
 }
 .text{
     font-size: 20px;
+    h1{
+        margin-bottom: 2%;
+    }
 }
 label{
     font-size: 20px;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     margin-left: 60px;
 }
 #Entermail,#Enteruser,#password,#confirmpassword{
@@ -56,8 +60,16 @@ label{
     border-radius: 50px;
     border: 3px solid;
     font-size: 20px;
+    max-width: 100%;
 }
-input[type="email"], input[type="username"] ,input[type="password"]{
+
+#Entermail:focus,#Enteruser:focus,#password:focus,#confirmpassword:focus{
+    border-color: #38b6ff;
+    outline: none;
+    box-shadow: none;
+    box-shadow: 0 0 5px rgb(56, 182, 255, 0.5);
+}
+input[type="email"], input[type="text"] ,input[type="password"]{
     padding: 0 60px;
 }
 .correct{
@@ -68,8 +80,10 @@ input[type="checkbox"]{
     height: 25px;
     margin-top: 11px;
 }
+
 .private, .privacy{
     font-size: 16px;
+    margin-bottom: 0;
 }
 .private{
     padding-left: 10px;
@@ -79,6 +93,31 @@ input[type="checkbox"]{
     text-decoration: underline;
     padding-left: 8px;
 }
+
+.back-login{
+    font-size: smaller;
+    color: #5170ff;
+    text-decoration: underline;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.back-login:hover{
+    cursor: pointer;
+}
+
+.input-err{
+    margin: 0;
+    margin-left: 60px;
+    margin-bottom: 2px;
+    font-size: x-small;
+    color: red;
+    display: none;
+}
+.visible{
+    display: block;
+}
+
 #sign_in{
     width: 120px;
     height: 60px;

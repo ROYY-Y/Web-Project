@@ -24,23 +24,38 @@
                     <h1>Create new account</h1>
                 </div>
                 <div class="Entersign">
-                <label for="Email">Email</label>
-                <input id="Entermail"type="email"  placeholder="ex.Nekoma123@example.com">
-                <label for="username">Username</label>
-                <input id="Enteruser" type="username" placeholder="Enter your username">
-                <label for="password">Password</label>
-                <input id="password"type="password" placeholder="Enter your  password">
-                <label for="Confirm password">Confirm password</label>
-                <input id="confirmpassword"type="password" placeholder="Comfirm your password">
+
+                    <label for="Email">Email</label>
+                    <p class="input-err" id="email-err">Invalid email format</p>
+                    <input class="input-box" id="Entermail" type="email" placeholder="ex.Nekoma123@example.com">
+
+                    <label for="username">Username</label>
+                    <p class="input-err" id="username-err">Invalid Username</p>
+                    <input class="input-box" id="Enteruser" type="text" placeholder="Enter your username">
+
+                    <label for="password">Password</label>
+                    <p class="input-err" id="password-err">Invalid Password</p>
+                    <input class="input-box" id="password" type="password" placeholder="Enter your  password">
+
+                    <label for="Confirm password">Confirm password</label>
+                    <p class="input-err" id="confirm-err">Password do not match</p>
+                    <input class="input-box" id="confirmpassword" type="password" placeholder="Comfirm your password">
+                
                 </div>
-                <div class="correct">
-                    <input type="checkbox">
-                    <p class="private">I understand in <p class="privacy">term&privacy</p></p>
+
+                <div class="correct">                    
+                    <input type="checkbox" id ="term-check" >
+                    <p class="private">I understand in
+                    <p class="privacy">term&privacy</p>
+                    </p>
                 </div>
+                <p class="input-err" style="margin: 0;" id="term-err">term&privacy must be confirmed</p>
+                <a class="back-login" href="Login.html">Already created an account?</a>
                 <button type="submit" id="sign_in" class="btn">Sign in</button>
             </div>
         </div>
     </div>
+    <script defer src="../JAVASCRIPT/SignIn.js"></script>
 </body>
 
 </html>

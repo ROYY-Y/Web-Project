@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../config/db');
 const jwt = require('jsonwebtoken');
 require('dotenv').config({ path: __dirname + '/../.env' });// Load environment variables from .env file
-// GET /login
+// Post /login
 router.post('/', (req, res) => {
     const {username, password} = req.body;
 

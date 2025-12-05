@@ -28,6 +28,9 @@ async function login() {
         window.location.href = "Home.html";
     } catch(err) {
         console.error(err);
+        alertBox.style.display = "block";
+        username.classList.add('invalid');
+        password.classList.add('invalid');
     }
 }
 
@@ -38,4 +41,3 @@ loginBtn.addEventListener('click', ()=>{
     }
 });
 
-console.log(localStorage.getItem('token'));
