@@ -16,11 +16,13 @@
             <h1>HOME</h1>
             <img src="../Img/Main/Logo_Home.png">
         </div>
-        <div class="nav-container nav-container-collection" onclick="window.location.href='Collection.html'"> <!--Collection Box-->
+        <div class="nav-container nav-container-collection" onclick="window.location.href='Collection.html'">
+            <!--Collection Box-->
             <h1>COLLECTION</h1>
             <img src="../Img/Main/Logo_Collection.png">
         </div>
-        <div class="nav-container nav-container-statistic" onclick= "window.location.href='Statistic.html'"> <!--Statistic Box-->
+        <div class="nav-container nav-container-statistic" onclick="window.location.href='Statistic.html'">
+            <!--Statistic Box-->
             <h1>STATISTIC</h1>
             <img src="../Img/Main/Logo_Statistic.png">
         </div>
@@ -31,11 +33,11 @@
     </nav>
 
     <main>
-        <section class = "main-sec main-left">
+        <section class="main-sec main-left">
             <h2>Profile</h2>
             <section class="profile-info-box">
                 <section class="profile-info-img">
-                    <div id = "profile-info-img-box"></div>
+                    <div id="profile-info-img-box"></div>
                     <button id="profile-info-img-btn">Edit Profile</button>
                 </section>
                 <section class="profile-info-text">
@@ -46,27 +48,44 @@
             </section>
             <h2>Change password</h2>
             <section class="change-pass-box">
-                <input class = "change-pass-input" id="CurrentPassword" name="CurrentPassword" type="password" placeholder="Current Password" required>
-                <input class = "change-pass-input" id="NewPassword" name="NewPassword" type="password" placeholder="New Password" required>
-                <input class = "change-pass-input" id="ConfirmPassword" name="ConfirmPassword" type="password" placeholder="Confirm Password" required>
+                <input class="change-pass-input" id="CurrentPassword" name="CurrentPassword" type="password"
+                    placeholder="Current Password" required>
+                <input class="change-pass-input" id="NewPassword" name="NewPassword" type="password"
+                    placeholder="New Password" required>
+                <input class="change-pass-input" id="ConfirmPassword" name="ConfirmPassword" type="password"
+                    placeholder="Confirm Password" required>
                 <button type="submit" id="change-pass-btn" class="btn">Change Password</button>
             </section>
 
         </section>
-        <section class = "main-sec main-right">
+        <section class="main-sec main-right">
             <div class="picture">
                 <div class="blue"><img src="../Img/Login/fetishbule.png"></div>
                 <div class="red"><img src="../Img/Login/fetishred.png"></div>
                 <div class="neko"><img src="../Img/Login/catnekoma.png"></div>
             </div>
             <div class="box">
-                    <button type="submit" id="Login" class="log">Log out</button>
-            
-                    <div class="Dea">Delete account</div>
-    
+                <button type="submit" id="logoutBtn" class="log">Log out</button>
+
+                <div id="Delete_a"class="Dea">Delete account</div>
+
             </div>
         </section>
+        <div class="box_logout" id="logout">
+            <div class="content">
+                <p>Are you sure you want to log out?</p>
+                <button id="confirmLogout">Log out</button>
+                <button id="close">Cancal</button>
+            </div>
+        </div>
+        <div class="box_delete" id="Delete_account">
+            <div class="content_D">
+                <p>Are you sure you want to delete account?</p>
+                <button id="confirmDelete">Delete account</button>
+                <button id="close_d">Cancal</button>
+            </div>
+        </div>
     </main>
 </body>
-
+<script src="../JAVASCRIPT/Profile.js"></script>
 </html>
