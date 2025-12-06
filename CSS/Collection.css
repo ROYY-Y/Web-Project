@@ -110,6 +110,7 @@ main{
     border-radius: 15px;
     flex-direction: row; 
     flex-wrap: wrap;
+    justify-content: center;
     gap: 2.5em;
     padding-top: 3%;
     
