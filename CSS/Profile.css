@@ -129,9 +129,10 @@ main {
 
 #change-pass-btn {
     width: 50%;
+    height: 3.5rem;
     padding: 0.3em 1em;
     color: white;
-    font-weight: bold;
+    font-weight:bolder;
     border: 3px solid black;
     background-color: #38b6ff;
     border-radius: 25px;
@@ -223,7 +224,7 @@ main {
     justify-content: center;
     /* border: 5px solid #FFF0E5; */
     /* background-color: #FDF5E6; */
-    margin-top: 4.5rem;
+    margin-top: 4rem;
 }
 
 .log {
@@ -232,12 +233,10 @@ main {
     padding: 0.5em 0;
     text-align: center;
     border-radius: 30px;
-    
+    border: 3px solid black;
     background-color: #fb6c5d;
-    /* border: 3px solid black; */
-    border: none;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     transition: all 0.3s ease-in-out;
     display: block;
