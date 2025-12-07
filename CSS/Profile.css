@@ -266,7 +266,7 @@ main {
     background-color: rgb(210, 48, 48);
 }
 /* POP UP */
-.box_logout,.box_delete{
+.box_logout,.box_delete, .box-changepassword, .box-changepassword-incorrect{
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
@@ -276,7 +276,7 @@ main {
   z-index: 1;
 }
 
-.content ,.content_D{
+.content {
   background: #fff;
   border-radius: 20px;
   text-align: center;
@@ -284,15 +284,46 @@ main {
   min-height: 400px;
   border: 6px solid black;
 }
-.box_logout.show,.box_delete.show{
+.box_logout.show,.box_delete.show, .show{
   display: flex;
 }
-.content p,.content_D p{
+.content p{
     padding: 1rem;
     font-size: 2.5rem;
     font-weight: 800;
     
 }
+#confirmOK{
+    width: 16rem;
+    height: 6.5rem;
+    border-radius: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    background-color: lime;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+#confirmOK-incorrect{
+    width: 16rem;
+    height: 6.5rem;
+    border-radius: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    background-color: #fb6c5d;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+#confirmOK:hover{
+    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.2);
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: rgb(47, 190, 68);
+}
+
 #confirmLogout,#close,#confirmDelete,#close_d{
     width: 16rem;
     height: 6.5rem;
@@ -309,7 +340,7 @@ main {
     margin-right: 4rem;
 }
 
-#confirmLogout:hover,#close:hover,#confirmDelete:hover,#close_d:hover{
+#confirmLogout:hover,#close:hover,#confirmDelete:hover,#close_d:hover,#confirmOK-incorrect:hover{
     box-shadow: 0 8px 20px rgb(0, 0, 0, 0.2);
     cursor: pointer;
     color: rgb(255, 255, 255);

@@ -29,7 +29,7 @@ app.use('/signIn', signCheck,signInRouter); // SignIn
 
 app.use('/profile', autherMdw, profileRouter)
 
-app.use('/profile/changePassword', autherMdw, profileRouter)
+app.use('/profile/changePassword', autherMdw, changePasswordRouter)
 // Finish setting up and connection
 
 app.listen(port, () => {

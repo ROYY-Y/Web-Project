@@ -4,7 +4,7 @@ const serverAddr = "http://localhost:3000";
 
 //function สำหรับการเชื่อมต่อกับ back-end
 
-async function profileSend(token) {
+async function profileSend(token) { //ใช้ตอนโหลดเข้าหน้า profile
 
   try {
     const res = await fetch(`${serverAddr}/profile`, {
@@ -27,12 +27,40 @@ async function profileSend(token) {
   }
 }
 
+async function changePassword(token, oldPass, newPass) {
+  try {
+    const res = await fetch(`${serverAddr}/profile/changePassword`, {
+      method: 'PATCH',
+      headers: {
+        'authorization': `Bearer ${token}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        oldPassword: oldPass,
+        newPassword: newPass
+      })
+    })
+
+    const data = await res.json()
+    if (!res.ok) {
+      console.log(data.message)
+      return null
+    }
+    return data
+  }
+
+  catch (err) {
+    console.log(err)
+    return null
+  }
+}
+
 // Use the data that we fetch from the server when the client starts
 
 window.addEventListener('DOMContentLoaded', async () => { // load all essential data from back-end
   const token = localStorage.getItem('token')
   console.log(token)
-  if(!token){
+  if (!token) {
     window.location.href = 'Login.html'
     return
   }
@@ -56,10 +84,40 @@ const logout = document.getElementById('logout');
 const closeBtn = document.getElementById('close');
 const confirmLogoutBtn = document.getElementById('confirmLogout');
 
+const boxChangepassword = document.getElementById('box-changepassword1')
+const confirmOK = document.getElementById('confirmOK')
+
+const boxChangepasswordIncorrect = document.getElementById('box-changepassword-incorrect')
+const confirmOkIncorrect = document.getElementById('confirmOK-incorrect')
+
 const delete_a = document.getElementById('Delete_a');
 const Delete_account = document.getElementById('Delete_account');
 const close_d = document.getElementById('close_d');
 const confirmDelete = document.getElementById('confirmDelete');
+
+
+//Changepassword POPUP
+Delete_account
+confirmOK.addEventListener('click', () => {
+  boxChangepassword.classList.remove('show');        // ปิดด้วยปุ่ม Cancel
+});
+
+boxChangepassword.addEventListener('click', (e) => {
+  if (e.target === boxChangepassword) {       // คลิกพื้นหลังด้านนอก = ปิด
+    boxChangepassword.classList.remove('show');
+  }
+});
+
+confirmOkIncorrect.addEventListener('click', () => {
+  boxChangepasswordIncorrect.classList.remove('show');        // ปิดด้วยปุ่ม Cancel
+});
+
+boxChangepasswordIncorrect.addEventListener('click', (e) => {
+  if (e.target === boxChangepasswordIncorrect) {       // คลิกพื้นหลังด้านนอก = ปิด
+    boxChangepasswordIncorrect.classList.remove('show');
+  }
+});
+
 
 // DELETE POPUP
 delete_a.addEventListener('click', () => {
@@ -110,9 +168,9 @@ const newPassErr = document.getElementById('newpassword-err')
 const confirmPassErr = document.getElementById('confirmpass-err')
 const currPassErr = document.getElementById('currpassword-err')
 // gobal checking
-const gobalCheck = [1,0,0];
+const gobalCheck = [1, 0, 0];
 
-currPass.addEventListener('input',()=>{
+currPass.addEventListener('input', () => {
   currPass.style.outlineColor = '#38b6ff'
   currPassErr.classList.remove('visible')
 })
@@ -156,45 +214,62 @@ confirmPass.addEventListener('input', () => {
   }
 })
 
-confirmPass.addEventListener('focus',()=>{
-    const pass = confirmPass.value
-    if (pass != newPass.value) {
+confirmPass.addEventListener('focus', () => {
+  const pass = confirmPass.value
+  if (pass != newPass.value) {
     confirmPass.style.outlineColor = 'red'
     confirmPass.innerText = 'Password do not match'
     confirmPassErr.classList.add('visible')
     gobalCheck[2] = 0
-    }
-    else{
-      confirmPass.style.outlineColor = "#77ff72ff"
-      confirmPassErr.classList.remove('visible')
-      gobalCheck[2] = 1 
-    }
+  }
+  else {
+    confirmPass.style.outlineColor = "#77ff72ff"
+    confirmPassErr.classList.remove('visible')
+    gobalCheck[2] = 1
+  }
 })
 
 
-changePassBtn.addEventListener('click', ()=>{
-    if(!currPass.value || !newPass.value || !confirmPass.value){
-      if(!currPass.value){
-        currPass.style.outlineColor = 'red'
-        currPassErr.innerText = 'Required'
-        currPassErr.classList.add('visible')
-      }
-      if(!newPass.value){
-        newPass.style.outlineColor = 'red'
-        newPassErr.innerText = 'Required'
-        newPassErr.classList.add('visible')
-      }
-      if(!confirmPass.value){
-        confirmPass.style.outlineColor = 'red'
-        confirmPassErr.innerText = 'Required'
-        confirmPassErr.classList.add('visible')
-      }
-      return
+changePassBtn.addEventListener('click', async () => {
+  if (!currPass.value || !newPass.value || !confirmPass.value) {
+    if (!currPass.value) {
+      currPass.style.outlineColor = 'red'
+      currPassErr.innerText = 'Required'
+      currPassErr.classList.add('visible')
     }
+    if (!newPass.value) {
+      newPass.style.outlineColor = 'red'
+      newPassErr.innerText = 'Required'
+      newPassErr.classList.add('visible')
+    }
+    if (!confirmPass.value) {
+      confirmPass.style.outlineColor = 'red'
+      confirmPassErr.innerText = 'Required'
+      confirmPassErr.classList.add('visible')
+    }
+    return
+  }
 
-    if(gobalCheck.some((e)=> e == 0)){
-      return
-    }
+  if (gobalCheck.some((e) => e == 0)) {
+    return
+  }
+
+  const token = localStorage.getItem('token')
+
+  const result = await changePassword(token, currPass.value, newPass.value);
+
+  if (!result) {
+    boxChangepasswordIncorrect.classList.add('show')
+    currPass.value = ''
+    newPass.value = ''
+    confirmPass.value = ''
+    return
+  }
+  boxChangepassword.classList.add('show')
+
+  currPass.value = ''
+  newPass.value = ''
+  confirmPass.value = ''
 
 
 })

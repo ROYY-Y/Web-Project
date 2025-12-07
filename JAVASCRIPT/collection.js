@@ -25,7 +25,6 @@ window.addEventListener('DOMContentLoaded', () => {
         return
     }
     fetchCollection(token).then(data => {
-        console.log(data);
         data.vocab.forEach(vocab => { // เข้าไปใน vocab แต่ละตัว
                 //แบ่งระดับของการ์ด
             const card = createBackCard(vocab, data.collection);
