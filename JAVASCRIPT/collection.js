@@ -20,8 +20,11 @@ const serverAddr = "http://localhost:3000";
 
 window.addEventListener('DOMContentLoaded', () => {
     const token = localStorage.getItem('token');
+    if(!token){
+        window.location.href = 'Login.html'
+        return
+    }
     fetchCollection(token).then(data => {
-        if (!data) return window.location.href = 'Login.html';
         console.log(data);
         data.vocab.forEach(vocab => { // เข้าไปใน vocab แต่ละตัว
                 //แบ่งระดับของการ์ด

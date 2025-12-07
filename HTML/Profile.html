@@ -41,20 +41,23 @@
                     <button id="profile-info-img-btn">Edit Profile</button>
                 </section>
                 <section class="profile-info-text">
-                    <h3>Username: Tk1nter</h3>
-                    <h3>Email: tk1nterNekoma@gmail.com</h3>
+                    <h3 id = "username-info">Username: N/A</h3>
+                    <h3 id = "email-info">Email: N/A</h3>
                     <h3>Rank: Master</h3>
                 </section>
             </section>
             <h2>Change password</h2>
             <section class="change-pass-box">
+                <p id = "currpassword-err">Required</p>
                 <input class="change-pass-input" id="CurrentPassword" name="CurrentPassword" type="password"
                     placeholder="Current Password" required>
+                <p id = "newpassword-err">Required</p>
                 <input class="change-pass-input" id="NewPassword" name="NewPassword" type="password"
                     placeholder="New Password" required>
+                <p id = "confirmpass-err">Password do not match</p>
                 <input class="change-pass-input" id="ConfirmPassword" name="ConfirmPassword" type="password"
                     placeholder="Confirm Password" required>
-                <button type="submit" id="change-pass-btn" class="btn">Change Password</button>
+                <button type="submit" class="btn" id="change-pass-btn" >Change Password</button>
             </section>
 
         </section>
@@ -65,27 +68,27 @@
                 <div class="neko"><img src="../Img/Login/catnekoma.png"></div>
             </div>
             <div class="box">
-                <button type="submit" id="logoutBtn" class="log">Log out</button>
-
                 <div id="Delete_a"class="Dea">Delete account</div>
+                
+                <button type="submit" id="logoutBtn" class="log">Log out</button>
 
             </div>
         </section>
         <div class="box_logout" id="logout">
             <div class="content">
-                <p>Are you sure you want to log out?</p>
-                <button id="confirmLogout">Log out</button>
+                <p>Are you sure you want to <span style="color: orangered;">log out?</span></p>
+                <button id="confirmLogout" onclick="window.location.href = 'Login.html'">Log out</button>
                 <button id="close">Cancal</button>
             </div>
         </div>
         <div class="box_delete" id="Delete_account">
             <div class="content_D">
-                <p>Are you sure you want to delete account?</p>
+                <p>Are you sure to <span style="color: red;">delete</span> account?</p>
                 <button id="confirmDelete">Delete account</button>
                 <button id="close_d">Cancal</button>
             </div>
         </div>
     </main>
 </body>
-<script src="../JAVASCRIPT/Profile.js"></script>
+<script defer src="../JAVASCRIPT/Profile.js"></script>
 </html>

@@ -9,6 +9,7 @@ const alertBox = document.getElementById("aleart-box");
 
 localStorage.removeItem('token');
 
+
 async function login() {
     try {
         const res = await fetch(`${serverAddr}/login`, {

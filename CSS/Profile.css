@@ -96,8 +96,21 @@ main {
 .change-pass-box {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
     max-width: 400px;      /* ป้องกันยืดเกินในจอใหญ่ */
+    p{
+        margin: 0;
+        margin-bottom: .2em;
+        margin-left: 2em;
+        font-size: smaller;
+        color: red;
+        display: none;
+    }
+}
+
+.visible{
+    
+    display: block !important;
+
 }
 
 .change-pass-input {
@@ -107,6 +120,7 @@ main {
     border: 2px solid black;
     border-radius: 15px;
     padding-left: 1.5em;
+    margin-bottom: 1em;
 }
 
 .change-pass-input:focus {
@@ -205,13 +219,11 @@ main {
 .box {
     width: 98.5%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: center;
     /* border: 5px solid #FFF0E5; */
     /* background-color: #FDF5E6; */
-    margin-top: 3rem;
+    margin-top: 4.5rem;
 }
 
 .log {
@@ -240,7 +252,6 @@ main {
     color: red;
     transition: all 0.3s ease-in-out;
     display: block;
-    margin-left: 27.5rem;
 }
 .Dea:hover{
      text-decoration: underline;

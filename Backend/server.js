@@ -9,7 +9,8 @@ require('dotenv').config({ path: __dirname + '/.env' });// Load environment vari
 const loginRouter = require('./routes/login.js');
 const collectionRouter = require('./routes/collection.js');
 const signInRouter = require('./routes/signIn.js')
-
+const profileRouter = require('./routes/profile.js')
+const changePasswordRouter = require('./routes/changePassword.js')
 //middle wares
 const autherMdw = require('./middlewares/authorization.js');
 const signCheck = require('./middlewares/signIn_check.js');
@@ -26,6 +27,9 @@ app.use('/collection', autherMdw, collectionRouter); // collection
 
 app.use('/signIn', signCheck,signInRouter); // SignIn
 
+app.use('/profile', autherMdw, profileRouter)
+
+app.use('/profile/changePassword', autherMdw, profileRouter)
 // Finish setting up and connection
 
 app.listen(port, () => {
