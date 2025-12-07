@@ -97,7 +97,7 @@ const confirmDelete = document.getElementById('confirmDelete');
 
 
 //Changepassword POPUP
-Delete_account
+
 confirmOK.addEventListener('click', () => {
   boxChangepassword.classList.remove('show');        // ปิดด้วยปุ่ม Cancel
 });
