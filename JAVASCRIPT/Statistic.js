@@ -27,12 +27,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     const totalWord = Number(data.total_word ?? (remember + missing)) || (remember + missing);
     const avg = Number(data.average_score ?? data.stat_avg) || 0;
 
+    const p_avg = document.getElementById('numaverage-score')
+
     const setP = (selector, value) => {
       const el = document.querySelector(selector);
       if (!el) return;
       const p = el.querySelector('p');
       const text = (value == null || Number.isNaN(Number(value))) ? 'NA' : String(value);
       if (p) p.innerText = text; else el.innerText = text;
+
     };
 
     setP('.numtotal-play', totalPlay);
@@ -40,6 +43,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     setP('.numremember-word', remember);
     setP('.nummissing-word', missing);
     setP('.numaverage-score', avg.toFixed(2));
+
+    p_avg.innerText += '%'
 
   } catch (err) {
     console.error('Error loading statistic:', err);

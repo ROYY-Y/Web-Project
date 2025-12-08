@@ -55,6 +55,30 @@ async function changePassword(token, oldPass, newPass) {
   }
 }
 
+async function deleteUser(token) {
+
+  try {
+    const res = await fetch(`${serverAddr}/deleteUser`, {
+      method: 'DELETE',
+      headers: {
+        'authorization': `Bearer ${token}`,
+      },
+    })
+
+    const data = await res.json()
+    if (!res.ok) {
+      console.log(data.message)
+      return null
+    }
+    return data
+  }
+  catch (err) {
+    console.error(err)
+    return null
+  }
+
+}
+
 // Use the data that we fetch from the server when the client starts
 
 window.addEventListener('DOMContentLoaded', async () => { // load all essential data from back-end
@@ -133,6 +157,17 @@ Delete_account.addEventListener('click', (e) => {
     Delete_account.classList.remove('show');
   }
 });
+
+confirmDelete.addEventListener('click', async () => { // click ที่ delete account
+  const token = localStorage.getItem('token')
+  if(!token) {
+    window.location.href = 'Login.html'
+    return
+  }  
+  const result = await deleteUser(token)
+  
+  window.location.href = 'Login.html'
+})
 
 // LOGOUT POPUP
 logoutBtn.addEventListener('click', () => {

@@ -73,7 +73,7 @@ main {
 }
 #profile-info-img-btn:hover {
     cursor: pointer;
-    background-color: #46b1db;
+    background-color: #0a76a1;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
@@ -142,7 +142,7 @@ main {
 
 #change-pass-btn:hover {
     cursor: pointer;
-    background-color: #46b1db;
+    background-color: #0a76a1;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
@@ -243,19 +243,21 @@ main {
     margin-left: auto;
 }
 .Dea{
-    width: 8rem;
+    width: 12rem;
+    height: auto;
     padding: 0.7em 0;
     text-align: center;
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: red;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: white;
+    background-color: red;
     transition: all 0.3s ease-in-out;
     display: block;
+    border: 3px solid black;
+    border-radius: 25px;
 }
 .Dea:hover{
-     text-decoration: underline;
-    text-decoration-color: red;
-    text-decoration-thickness: 1.9px;
+    background-color: rgb(176, 5, 5);
     cursor: pointer;
 }
 .log:hover{
