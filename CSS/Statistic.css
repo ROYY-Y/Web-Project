@@ -48,7 +48,7 @@ main{
     align-items: center;
     font-weight: 900;
 }
-.numtotal-paly, .numtotal-word, .numremember-word, .nummissing-word, .numaverage-score{
+.numtotal-play, .numtotal-word, .numremember-word, .nummissing-word, .numaverage-score{
     display: flex;
     width: 100px;
     height: 50px;
