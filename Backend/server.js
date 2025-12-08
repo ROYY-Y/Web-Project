@@ -17,6 +17,8 @@ const statisticRouter = require('./routes/Statistic.js');
 
 const deleteUserRouter = require('./routes/deleteUser.js');
 
+const prepareRouter = require('./routes/Prepare.js')
+
 //middle wares
 const autherMdw = require('./middlewares/authorization.js');
 const signCheck = require('./middlewares/signIn_check.js');
@@ -40,7 +42,9 @@ app.use('/profile/changePassword', autherMdw, changePasswordRouter)
 
 app.use('/statistic', autherMdw, statisticRouter); // statistic
 
-app.use('/deleteUser', autherMdw, deleteUserRouter);
+app.use('/deleteUser', autherMdw, deleteUserRouter); //Delete User
+
+app.use('/prepare',prepareRouter) //Prepare page
 
 // Finish setting up and connection
 
