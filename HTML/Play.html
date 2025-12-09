@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play - Nekoma</title>
+    <link rel="stylesheet" href="../CSS/Play.css">
+</head>
+
+<body>
+    <main>
+        <section class="info-bar">
+            <h2 id='curr-level'>Level : NA</h2>
+            <h2 id='curr-cnt'>1/10</h2>
+            <h2 id='score'>Score : 0</h2>
+        </section>
+        <div class="card-container" id = "card-container1">
+            <section class="cards">
+                <div class="cards-background">
+                    <section class="speaker-box">
+                        <div class="speaker"></div>
+                    </section>
+                    <section class="card-img"></section>
+                    <p id='kanji-hide'>Kanji</p>
+                    <p id='hiragana-romanji-hide'>???</p>
+                    <p id='meaning-hide'>???</p>
+                </div>
+            </section>
+            <section class="cards-result">
+                <div class="cards-background">
+                    <section class="speaker-box">
+                        <div class="speaker"></div>
+                    </section>
+                    <section class="card-img"></section>
+                    <p id='kanji-result'></p>
+                    <p id='hiragana-romanji-result'></p>
+                    <p id='meaning-result'></p>
+                </div>
+            </section>
+        </div>
+
+        <section class="text">Do you know this word?</section>
+
+        <section class="answer">
+            <section class="answer-btn" id="answer-no">X</section>
+            <section class="answer-btn" id="answer-yes">✓</section>
+        </section>
+
+        <section class="next-container">
+            <div id="next-btn">NEXT</div>
+        </section>
+    </main>
+    <script defer src="../JAVASCRIPT/Play.js"></script>
+</body>
+
+</html>

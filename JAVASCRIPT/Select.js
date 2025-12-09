@@ -1,4 +1,6 @@
 // checking token (if token is null return to login.html)
+localStorage.removeItem('vocab')
+localStorage.removeItem('level')
 
 window.addEventListener('DOMContentLoaded',()=>{
     const token = localStorage.getItem('token')

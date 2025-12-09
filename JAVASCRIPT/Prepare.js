@@ -10,6 +10,11 @@ const vocabTitleContainer = document.getElementById('vocab-title-container')
 const vocabTitleText = document.getElementById('vocab-text')
 const vocabTitleImg = document.getElementById('title-img')
 
+const readyBtn = document.getElementById('ready-btn')
+readyBtn.addEventListener('click', ()=>{
+    window.location.href = 'Play.html'
+})
+
 vocabTitleText.innerText = level
 vocabTitleImg.style.backgroundImage = `url(${`../Img/Select/${level}.png`})`
 
@@ -43,6 +48,8 @@ window.addEventListener('DOMContentLoaded', async () => {
         const card = createBackCard(vocab)
         vocabGrid.appendChild(card)
     });
+
+    localStorage.setItem('vocab',JSON.stringify(data.result))
 })
 
 
