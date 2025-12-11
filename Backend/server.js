@@ -19,6 +19,8 @@ const deleteUserRouter = require('./routes/deleteUser.js');
 
 const prepareRouter = require('./routes/Prepare.js')
 
+const playResultRouter = require('./routes/play-result.js');
+
 //middle wares
 const autherMdw = require('./middlewares/authorization.js');
 const signCheck = require('./middlewares/signIn_check.js');
@@ -36,7 +38,7 @@ app.use('/collection', autherMdw, collectionRouter); // collection
 app.use('/signIn', signCheck,signInRouter); // SignIn
 
 
-app.use('/profile', autherMdw, profileRouter)
+app.use('/profile', autherMdw, profileRouter) // profile
 
 app.use('/profile/changePassword', autherMdw, changePasswordRouter)
 
@@ -46,6 +48,7 @@ app.use('/deleteUser', autherMdw, deleteUserRouter); //Delete User
 
 app.use('/prepare',prepareRouter) //Prepare page
 
+app.use('/play-result', autherMdw, playResultRouter); //
 // Finish setting up and connection
 
 app.listen(port, () => {

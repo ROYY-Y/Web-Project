@@ -54,6 +54,7 @@ async function getCollection(token) {
 document.addEventListener('DOMContentLoaded', async () => {
     const token = localStorage.getItem('token')
     const collection = await getCollection(token)
+    localStorage.setItem('level', level);   
 
     // Cards variable
 

@@ -1,7 +1,8 @@
-*{
+* {
     font-family: 'Nunito', sans-serif;
 }
-body{
+
+body {
     height: 100vh;
     margin: 0;
     display: flex;
@@ -9,7 +10,7 @@ body{
     position: relative;
 }
 
-.main-vocab-box{
+.main-vocab-box {
     width: 85%;
     margin: 0 auto;
     margin-top: 4%;
@@ -20,7 +21,7 @@ body{
     padding-bottom: 4%;
 }
 
-.vocab-title{
+.vocab-title {
     width: 18%;
     height: 4.5rem;
     background-color: #a3d0f7;
@@ -32,35 +33,39 @@ body{
 
 }
 
-.vocab-title h2{
+.vocab-title h2 {
     margin: 0;
     font-size: 2em;
 
 }
 
-.title-img{
+.title-img {
     width: 25%;
     height: 80%;
     background-size: 100% 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#vocab-grid{
+#vocab-grid {
     display: flex;
     width: 100%;
     height: auto;
     background-color: azure;
     border: 4px solid black;
     border-radius: 15px;
-    flex-direction: row; 
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2.5em;
     padding-top: 3%;
-    
+
     padding-bottom: 3%;
 }
 
-.cards{ /*ส่วนของการ์ดพื้นหลัง*/
+.cards {
+    /*ส่วนของการ์ดพื้นหลัง*/
     width: 13.5rem;
     height: 18rem;
     background-image: url(../Img/card/back_card.png);
@@ -70,7 +75,8 @@ body{
     align-items: center;
 }
 
-.cards-background{ /*ด้านในการ์ดทั้งหมด*/
+.cards-background {
+    /*ด้านในการ์ดทั้งหมด*/
     position: relative;
     bottom: 1.5%;
     width: 76%;
@@ -82,22 +88,30 @@ body{
     align-items: center;
     justify-content: space-evenly;
     text-align: center;
-    p{
+
+    p {
         margin: 0;
         font-size: .8em;
     }
-    .card-img{ /*รูปของการ์ด*/
 
-        width: 80%;
+    .card-img {
+        /*รูปของการ์ด*/
+
+        width: 110%;
         height: 50%;
         background-size: 100% 100%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
     }
-    .speaker-box{
+
+    .speaker-box {
         width: 100%;
 
         height: 8%;
         display: flex;
-        .speaker{
+
+        .speaker {
             height: 100%;
             width: 25%;
             background-image: url(../Img/card/Speaker.png);
@@ -105,14 +119,15 @@ body{
             transition: all .2s ease-in-out;
         }
     }
-    
+
 }
-.speaker:hover{
+
+.speaker:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
 
-#ready-btn{
+#ready-btn {
     width: 15%;
     height: 4em;
     background-color: #c1ff72;
@@ -125,7 +140,7 @@ body{
     align-self: flex-end;
 }
 
-#ready-btn:hover{
+#ready-btn:hover {
     cursor: pointer;
     background-color: #86c631;
     box-shadow: 0 8px 20px rgb(0, 0, 0, 0.2);
