@@ -1,6 +1,4 @@
-// Result.js
-// Purpose: Display play result, save to DB, and handle localStorage cleanup
-
+// อ่านข้อมูล JWT จาก token
 function parseJwt(token) {
   try {
     const parts = token.split('.');
@@ -15,7 +13,7 @@ function parseJwt(token) {
     return null;
   }
 }
-
+// เมื่อเปิดหน้า Result ดึงข้อมูลจาก localStorage
 document.addEventListener('DOMContentLoaded', () => {
   const token = localStorage.getItem('token');
   const rememberVocabStr = localStorage.getItem('rememberVocab');
@@ -35,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // Parse play data from localStorage
+  // แปลงข้อมูลที่ดึงมา
   let rememberVocab = [];
   let score = 0;
   let missing = 0;
@@ -54,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const totalWord = score + missing;
   const accuracy = totalWord > 0 ? ((score / totalWord) * 100).toFixed(2) : 0;
 
-  // Display result on page
+  // แสดงผลลัพธ์
   displayResult({
     total_word: totalWord,
     remember_word: score,
@@ -63,14 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
     level: localStorage.getItem('level') || 'N/A'
   });
 
-  // Save result to backend
+  // บันทึกผลลัพธ์ไปยังฐานข้อมูล
   saveResultToDb(token, tokenPayload.user_no, rememberVocab, score, missing);
 
-  // Handle "Home" button click
+  // เมื่อกดปุ่ม Home ให้ล้างข้อมูล rocalStorage 
   const homeBtn = document.getElementById('Homesave');
   if (homeBtn) {
     homeBtn.addEventListener('click', () => {
-      // Clear play result but keep token
       localStorage.removeItem('rememberVocab');
       localStorage.removeItem('score');
       localStorage.removeItem('missing');

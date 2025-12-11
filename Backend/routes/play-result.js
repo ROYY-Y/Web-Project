@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/db');
 
-// POST /play-result
-// Purpose: Save play result, insert new vocab to collection, and update statistics
 router.post('/', (req, res) => {
   const userNo = req.user && req.user.user_no;
   if (!userNo) return res.status(400).json({ message: 'User id missing' });
@@ -13,11 +11,10 @@ router.post('/', (req, res) => {
   if (score === undefined || missing === undefined) {
     return res.status(400).json({ message: 'Missing score or missing count' });
   }
-
+  
   // Step 1: Insert rememberVocab into COLLECTION (only if not already there)
   const insertCollection = (callback) => {
     if (!rememberVocab || rememberVocab.length === 0) {
-      // No new vocab to add
       return callback(null);
     }
 
@@ -26,7 +23,7 @@ router.post('/', (req, res) => {
 
     rememberVocab.forEach((vocab) => {
       const vocabNo = vocab.vocab_no;
-      // Check if already in collection
+
       const checkSql = 'SELECT * FROM COLLECTION WHERE user_no = ? AND vocab_no = ?';
       db.query(checkSql, [userNo, vocabNo], (err, results) => {
         if (err) {
@@ -38,7 +35,6 @@ router.post('/', (req, res) => {
           return;
         }
 
-        // If not found, insert
         if (!results || results.length === 0) {
           const insertSql = 'INSERT INTO COLLECTION (user_no, vocab_no) VALUES (?, ?)';
           db.query(insertSql, [userNo, vocabNo], (err) => {
@@ -49,7 +45,6 @@ router.post('/', (req, res) => {
             }
           });
         } else {
-          // Already in collection, skip
           completed++;
           if (completed === rememberVocab.length) {
             callback(null);
@@ -59,23 +54,40 @@ router.post('/', (req, res) => {
     });
   };
 
-  // Step 2: Update STAT
+  // Step 2: Update STAT with cumulative average
   const updateStat = (callback) => {
-    const totalWord = score + missing;
-    const avgScore = totalWord > 0 ? ((score / totalWord) * 100).toFixed(2) : 0;
-
-    const sql = `
-      UPDATE STAT 
-      SET total_play = total_play + 1,
-          sum_correct = sum_correct + ?,
-          sum_wrong = sum_wrong + ?,
-          stat_avg = ?
-      WHERE user_no = ?
-    `;
-
-    db.query(sql, [score, missing, avgScore, userNo], (err, results) => {
+    // First, fetch current STAT to calculate cumulative average
+    const fetchSql = 'SELECT sum_correct, sum_wrong FROM STAT WHERE user_no = ?';
+    db.query(fetchSql, [userNo], (err, results) => {
       if (err) return callback(err);
-      callback(null, { totalPlay: results.affectedRows, avg: avgScore });
+
+      // Calculate new cumulative totals after this round - CONVERT TO NUMBER
+      const currentCorrect = (results && results[0]) ? Number(results[0].sum_correct) : 0;
+      const currentWrong = (results && results[0]) ? Number(results[0].sum_wrong) : 0;
+      
+      const newTotalCorrect = currentCorrect + score;
+      const newTotalWrong = currentWrong + missing;
+      const newTotal = newTotalCorrect + newTotalWrong;
+      
+      // Calculate cumulative average (all-time) - NOT just this round
+      const avgScore = newTotal > 0 ? ((newTotalCorrect / newTotal) * 100).toFixed(2) : 0;
+
+      console.log(`DEBUG updateStat - userNo: ${userNo}, currentCorrect: ${currentCorrect}, currentWrong: ${currentWrong}, score: ${score}, missing: ${missing}, newTotalCorrect: ${newTotalCorrect}, newTotalWrong: ${newTotalWrong}, avgScore: ${avgScore}`);
+
+      const sql = `
+        UPDATE STAT 
+        SET total_play = total_play + 1,
+            sum_correct = sum_correct + ?,
+            sum_wrong = sum_wrong + ?,
+            stat_avg = ?
+        WHERE user_no = ?
+      `;
+      
+      db.query(sql, [score, missing, avgScore, userNo], (err, results) => {
+        if (err) return callback(err);
+        console.log(`DEBUG UPDATE completed - affectedRows: ${results.affectedRows}`);
+        callback(null, { totalPlay: results.affectedRows, avg: avgScore });
+      });
     });
   };
 
