@@ -107,6 +107,25 @@ main{
 
 .text{
     font-size: 1.5em;
+    font-weight:600;
+
+}
+
+.text-puk-kik{
+    animation: puk-kik .5s ease-in-out;
+}
+
+@keyframes puk-kik {
+    0%{
+        transform: translateY(10px);
+    }
+    50%{
+        transform: translateY(-25px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
 }
 
 .answer{

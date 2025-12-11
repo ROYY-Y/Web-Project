@@ -56,6 +56,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const collection = await getCollection(token)
     localStorage.setItem('level', level);   
 
+    const text = document.getElementById('text')
+
     // Cards variable
 
     const cardContainer = document.getElementById('card-container1')
@@ -78,6 +80,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const speakers = document.querySelectorAll('.speaker')
 
+    const wrongWords = ['Try again later!','Never mind!', 'Nice try!']
+    const correctWords = ['Well done!','Good job!','Amazing!', 'P like it!']
 
     let audio_scr = ''
     speakers.forEach(e => {
@@ -92,6 +96,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         answerNo.style.display = 'none'
         answerYes.style.display = 'none'
         missing++;
+        text.classList.add('text-puk-kik')
+        const audio = new Audio('../Audio/SFX/incorrectSound.mp3');
+        audio.play();
+        text.innerText = wrongWords[Math.floor(Math.random() * wrongWords.length)]
+        text.style.color = 'red'
     })
 
 
@@ -102,6 +111,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         cardContainer.classList.add('flip')
         answerNo.style.display = 'none'
         answerYes.style.display = 'none'
+
+        text.classList.add('text-puk-kik')
+        const audio = new Audio('../Audio/SFX/correctSound.mp3');
+
+        audio.play()
+
+        text.innerText = correctWords[Math.floor(Math.random() * wrongWords.length)]
+        text.style.color = '#5af537ff'
 
         let found = false
         for (const item of collection) {
@@ -122,6 +139,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         return new Promise(resolve => {
             button.addEventListener("click", () => {
                 cardContainer.classList.remove('flip')
+                text.classList.remove('text-puk-kik')
+                text.innerText = 'Do you know this word?'
+                text.style.color = 'black'
                 setTimeout(() => {
 
                 }, 1000)
@@ -149,7 +169,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             hiragana_romanji_result.innerText = `${currVocab.vocab_hiragana} - ${currVocab.vocab_romanji}`
             meaning_result.innerText = currVocab.vocab_meaning
-
 
             if (cnt == 9) next.innerText = 'FINISH'
             await waitForClick(next)
