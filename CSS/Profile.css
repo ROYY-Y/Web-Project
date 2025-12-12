@@ -31,8 +31,9 @@ main {
 .main-left {
     display: flex;
     flex-direction: column;
-    gap: 2.5em;
+    justify-content: space-around;
     width: 100%;
+
 }
 
 /* Profile info box layout */
@@ -129,6 +130,7 @@ main {
 
 #change-pass-btn {
     width: 50%;
+    margin-top: 10%;
     height: 3.5rem;
     padding: 0.3em 1em;
     color: white;
@@ -224,7 +226,7 @@ main {
     justify-content: center;
     /* border: 5px solid #FFF0E5; */
     /* background-color: #FDF5E6; */
-    margin-top: 4rem;
+    margin-bottom: 1rem;
 }
 
 .log {
