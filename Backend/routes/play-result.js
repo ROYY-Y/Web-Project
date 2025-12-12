@@ -11,8 +11,7 @@ router.post('/', (req, res) => {
   if (score === undefined || missing === undefined) {
     return res.status(400).json({ message: 'Missing score or missing count' });
   }
-  
-  // Step 1: Insert rememberVocab into COLLECTION (only if not already there)
+  // insert remembered vocab into COLLECTION
   const insertCollection = (callback) => {
     if (!rememberVocab || rememberVocab.length === 0) {
       return callback(null);
@@ -54,14 +53,14 @@ router.post('/', (req, res) => {
     });
   };
 
-  // Step 2: Update STAT with cumulative average
+  // Step 2: Update STAT 
   const updateStat = (callback) => {
-    // First, fetch current STAT to calculate cumulative average
+    // fetch STAT
     const fetchSql = 'SELECT sum_correct, sum_wrong FROM STAT WHERE user_no = ?';
     db.query(fetchSql, [userNo], (err, results) => {
       if (err) return callback(err);
 
-      // Calculate new cumulative totals after this round - CONVERT TO NUMBER
+      // accumulate scores
       const currentCorrect = (results && results[0]) ? Number(results[0].sum_correct) : 0;
       const currentWrong = (results && results[0]) ? Number(results[0].sum_wrong) : 0;
       
@@ -69,7 +68,7 @@ router.post('/', (req, res) => {
       const newTotalWrong = currentWrong + missing;
       const newTotal = newTotalCorrect + newTotalWrong;
       
-      // Calculate cumulative average (all-time) - NOT just this round
+      // avg
       const avgScore = newTotal > 0 ? ((newTotalCorrect / newTotal) * 100).toFixed(2) : 0;
 
       console.log(`DEBUG updateStat - userNo: ${userNo}, currentCorrect: ${currentCorrect}, currentWrong: ${currentWrong}, score: ${score}, missing: ${missing}, newTotalCorrect: ${newTotalCorrect}, newTotalWrong: ${newTotalWrong}, avgScore: ${avgScore}`);
@@ -91,7 +90,6 @@ router.post('/', (req, res) => {
     });
   };
 
-  // Execute steps sequentially
   insertCollection((err) => {
     if (err) {
       console.error('Error inserting collection:', err);

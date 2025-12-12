@@ -179,3 +179,151 @@ input[type="checkbox"]{
     height: 100%;
     object-fit: cover;
 }
+
+/*RESPONSIVE DESIGN*/
+@media (max-width: 1150px) {
+    .display {
+        width: 90%;
+        height: 85%;
+    }
+    
+    .displayimg {
+        width: 45%;
+    }
+    
+    .displaysign {
+        width: 55%;
+    }
+    
+    .text {
+        font-size: 18px;
+    }
+    
+    label {
+        font-size: 18px;
+    }
+    
+    #Entermail, #Enteruser, #password, #confirmpassword {
+        width: 300px;
+        height: 55px;
+        font-size: 18px;
+    }
+    
+    input[type="email"], input[type="text"], input[type="password"] {
+        padding: 0 50px;
+    }
+    
+    #sign_in {
+        width: 140px;
+        height: 60px;
+        font-size: 18px;
+    }
+    
+    .img {
+        width: 300px;
+        height: 300px;
+    }
+}
+@media (max-width: 790px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        padding: 20px 0;
+    }
+    
+    .display {
+        flex-direction: column;
+        width: 85%;
+        height: auto;
+        gap: 15px;
+    }
+    
+    .displayimg {
+        width: 100%;
+        height: 250px;
+    }
+    
+    .displaysign {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+    
+    .SignNEKOMA {
+        width: 100%;
+    }
+    
+    .Entersign {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .text {
+        font-size: 16px;
+    }
+    
+    .text h1 {
+        margin-bottom: 1%;
+        font-size: 22px;
+    }
+    
+    label {
+        font-size: 16px;
+        margin-top: 3px;
+        margin-bottom: 2px;
+        margin-left: 0;
+    }
+    
+    #Entermail, #Enteruser, #password, #confirmpassword {
+        width: 280px;
+        height: 50px;
+        font-size: 16px;
+        border-radius: 40px;
+    }
+    
+    input[type="email"], input[type="text"], input[type="password"] {
+        padding: 0 20px;
+    }
+    
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        margin-top: 8px;
+    }
+    
+    .private, .privacy {
+        font-size: 13px;
+    }
+    
+    .input-err {
+        margin-left: 0;
+        font-size: 11px;
+    }
+    
+    #sign_in {
+        width: 110px;
+        height: 55px;
+        font-size: 16px;
+    }
+    
+    .img {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .fetishblue {
+        width: 100px;
+        height: 100px;
+        inset-inline-start: 30px;
+        inset-block-start: -5px;
+    }
+    
+    .fetishred {
+        width: 50px;
+        height: 50px;
+        inset-inline-start: 140px;
+    }
+}

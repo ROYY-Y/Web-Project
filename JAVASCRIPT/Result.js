@@ -91,7 +91,33 @@ function displayResult(playData) {
   setElement('.numaccuracy', playData.accuracy + '%');
   setElement('.N-Level', playData.level);
 
+  // Display stars based on score
+  displayStars(playData.remember_word);
+
   console.log('Result displayed:', playData);
+}
+
+function displayStars(score) {
+  const star1 = document.querySelector('.Star-1');
+  const star2 = document.querySelector('.Star-2');
+  const star3 = document.querySelector('.Star-3');
+
+  // Reset all stars
+  if (star1) star1.classList.remove('gold');
+  if (star2) star2.classList.remove('gold');
+  if (star3) star3.classList.remove('gold');
+
+  if (score >= 10) {
+    if (star1) star1.classList.add('gold');
+    if (star2) star2.classList.add('gold');
+    if (star3) star3.classList.add('gold');
+  } else if (score >= 7) {
+    if (star1) star1.classList.add('gold');
+    if (star2) star2.classList.add('gold');
+  } else if (score > 3) {
+    if (star1) star1.classList.add('gold');
+  }
+  console.log(`Stars display: ${score} correct answers`);
 }
 
 async function saveResultToDb(token, userNo, rememberVocab, score, missing) {

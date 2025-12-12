@@ -270,7 +270,6 @@ main {
         height: 50%;
         background-size: 100% 100%;
         background-size: contain;
-        /*เลือกรูปไม่บีบ */
         background-position: center;
     }
 

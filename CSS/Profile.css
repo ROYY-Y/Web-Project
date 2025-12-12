@@ -347,3 +347,158 @@ main {
     color: rgb(255, 255, 255);
     background-color: rgb(210, 48, 48);
 }
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1024px) {
+    main {
+        padding-bottom: 30px;
+    }
+
+    .main-sec {
+        padding-left: 2.5em;
+        padding-top: 0.5em;
+        gap: 1.5em;
+    }
+
+    .profile-info-box {
+        gap: 1.5em;
+    }
+
+    .profile-info-img {
+        flex: 0 0 200px;
+    }
+
+    #profile-info-img-box {
+        height: 200px;
+    }
+
+    .change-pass-box {
+        max-width: 100%;
+    }
+
+    .picture {
+        min-height: 500px;
+    }
+
+    .blue, .red {
+        margin-left: -9rem;
+        margin-top: -12.8rem;
+    }
+    .red{
+        margin-left: -2rem;
+        margin-top: -12.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+
+    .main-sec {
+        width: 100%;
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+        display: block;
+    }
+
+    .main-left, .main-right {
+        width: 100%;
+        padding: 0;
+    }
+
+    .profile-info-box {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2em;
+    }
+
+    .profile-info-img {
+        flex: none;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #profile-info-img-box {
+        width: 80%;
+        max-width: 320px;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+
+    .profile-info-text {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        gap: 0.8em;
+    }
+
+    .change-pass-box {
+        max-width: 100%;
+        margin-top: 1em;
+    }
+
+    .change-pass-input {
+        width: 100%;
+        font-size: 1.05em;
+        padding-left: 1em;
+    }
+
+    #change-pass-btn {
+        width: 70%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .picture {
+        min-height: 320px;
+        margin-top: 1.5em;
+    }
+
+    .neko {
+        width: 70%;
+        max-width: 20rem;
+    }
+
+    .blue, .red {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-left: -1rem;
+        margin-top: -6rem;
+    }
+    .red {
+        margin-left: 3rem;
+        margin-top: -5rem;
+    }
+
+    .box {
+        width: 100%;
+        margin-top: 1.5rem;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+
+    .log, .Dea {
+        width: 90%;
+        margin: 0.5rem auto;
+    }
+
+    /* Popups*/
+    .content {
+        min-width: auto;
+        width: 90%;
+        max-width: 520px;
+        min-height: auto;
+        padding: 1.5rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .content #confirmLogout,#confirmDelete{
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+}
