@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../CSS/NavBar.css">
     <link rel="stylesheet" href="../CSS/Profile.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -37,23 +38,35 @@
             <h2>Profile</h2>
             <section class="profile-info-box">
                 <section class="profile-info-text">
-                    <h3 id = "username-info">Username: N/A</h3>
-                    <h3 id = "email-info">Email: N/A</h3>
+                    <h3 id="username-info">Username: N/A</h3>
+                    <h3 id="email-info">Email: N/A</h3>
                     <h3>Rank: Master</h3>
                 </section>
             </section>
             <h2>Change password</h2>
             <section class="change-pass-box">
-                <p id = "currpassword-err">Required</p>
-                <input class="change-pass-input" id="CurrentPassword" name="CurrentPassword" type="password"
-                    placeholder="Current Password" required>
-                <p id = "newpassword-err">Required</p>
-                <input class="change-pass-input" id="NewPassword" name="NewPassword" type="password"
-                    placeholder="New Password" required>
-                <p id = "confirmpass-err">Password do not match</p>
-                <input class="change-pass-input" id="ConfirmPassword" name="ConfirmPassword" type="password"
-                    placeholder="Confirm Password" required>
-                <button type="submit" class="btn" id="change-pass-btn" >Change Password</button>
+                <p id="currpassword-err">Required</p>
+                <div class="password-wrapper">
+                    <input class="change-pass-input" id="CurrentPassword" name="CurrentPassword" type="password"
+                        placeholder="Current Password" required>
+                    <i class="fa-solid fa-eye-slash toggle-eye" data-target="CurrentPassword"></i>
+                </div>
+
+                <p id="newpassword-err">Required</p>
+                <div class="password-wrapper">
+                    <input class="change-pass-input" id="NewPassword" name="NewPassword" type="password"
+                        placeholder="New Password" required>
+                    <i class="fa-solid fa-eye-slash toggle-eye" data-target="NewPassword"></i>
+                </div>
+
+                <p id="confirmpass-err">Password do not match</p>
+                <div class="password-wrapper">
+                    <input class="change-pass-input" id="ConfirmPassword" name="ConfirmPassword" type="password"
+                        placeholder="Confirm Password" required>
+                    <i class="fa-solid fa-eye-slash toggle-eye" data-target="ConfirmPassword"></i>
+                </div>
+
+                <button type="submit" class="btn" id="change-pass-btn">Change Password</button>
             </section>
 
         </section>
@@ -64,8 +77,8 @@
                 <div class="neko"><img src="../Img/Login/catnekoma.png"></div>
             </div>
             <div class="box">
-                <div id="Delete_a"class="Dea">Delete account</div>
-                
+                <div id="Delete_a" class="Dea">Delete account</div>
+
                 <button type="submit" id="logoutBtn" class="log">Log out</button>
 
             </div>
@@ -85,14 +98,14 @@
             </div>
         </div>
 
-        <div class="box-changepassword" id = "box-changepassword1">
+        <div class="box-changepassword" id="box-changepassword1">
             <div class="content">
                 <p style="color: lime;">Password changed!</p>
                 <button id="confirmOK">OK</button>
             </div>
         </div>
 
-        <div class="box-changepassword-incorrect" id = "box-changepassword-incorrect">
+        <div class="box-changepassword-incorrect" id="box-changepassword-incorrect">
             <div class="content">
                 <p style="color: red;">Password incorrect!</p>
                 <button id="confirmOK-incorrect">OK</button>
@@ -101,4 +114,5 @@
     </main>
     <script defer src="../JAVASCRIPT/Profile.js"></script>
 </body>
+
 </html>

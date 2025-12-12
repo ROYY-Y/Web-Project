@@ -218,3 +218,107 @@ input[type="username"], input[type="password"] {
         height: 300px;
     }
 }
+
+
+/* @media (max-width: 790px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        padding: 20px 0;
+    }
+    
+    .display {
+        flex-direction: column;
+        width: 50%;
+        height: auto;
+        gap: 15px;
+        min-height: auto;
+    }
+    
+    .displayimg {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .displayLogin {
+        width: 100%;
+        height: auto;
+    }
+    
+    .LoginNEKO {
+        padding: 10px;
+    }
+    
+    .LoginNEKO h1 {
+        margin: 0;
+        font-size: 20px;
+        margin-top: 0.5em;
+        margin-bottom: 0.3em;
+    }
+    
+    .circle {
+        width: 60px;
+        height: 60px;
+        margin-top: 10px;
+    }
+    
+    .text {
+        font-size: 14px;
+    }
+    
+    #Username, #Password {
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    
+    #Password {
+        margin-top: 20px;
+    }
+    
+    .onClick {
+        
+        margin-top: 10px;
+        padding: 0 5px;
+        font-size: 12px;
+    }
+    
+    .create {
+        margin-top: 8px;
+    }
+    
+    .buttonLogin {
+        width: 100%;
+        height: 60px;
+        margin-left: 0;
+    }
+    
+    #Login {
+        width: 120px;
+        height: 50px;
+        font-size: 16px;
+    }
+    
+    .img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .fetishblue {
+        width: 120px;
+        height: 120px;
+        inset-inline-start: 30px;
+        inset-block-start: -5px;
+    }
+    
+    .fetishred {
+        width: 60px;
+        height: 60px;
+        inset-inline-start: 160px;
+    }
+    .Forgot,.create{
+        font-size: 12px;
+    }
+} */
