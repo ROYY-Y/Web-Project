@@ -309,9 +309,8 @@ changePassBtn.addEventListener('click', async () => {
 
 })
 
-// ===============================
 // password visibility toggle
-// ===============================
+
 const toggleEyes = document.querySelectorAll('.toggle-eye');
 
 toggleEyes.forEach(eye => {

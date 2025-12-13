@@ -220,7 +220,7 @@ input[type="username"], input[type="password"] {
 }
 
 
-/* @media (max-width: 790px) {
+@media (max-width: 790px) {
     body {
         height: auto;
         min-height: 100vh;
@@ -229,7 +229,7 @@ input[type="username"], input[type="password"] {
     
     .display {
         flex-direction: column;
-        width: 50%;
+        width: 75%;
         height: auto;
         gap: 15px;
         min-height: auto;
@@ -321,4 +321,4 @@ input[type="username"], input[type="password"] {
     .Forgot,.create{
         font-size: 12px;
     }
-} */
+}

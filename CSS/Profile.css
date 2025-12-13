@@ -97,7 +97,7 @@ main {
 .change-pass-box {
     display: flex;
     flex-direction: column;
-    max-width: 400px;      /* ป้องกันยืดเกินในจอใหญ่ */
+    max-width: 300px;      /* ป้องกันยืดเกินในจอใหญ่ */
     p{
         margin: 0;
         margin-bottom: .2em;
@@ -167,7 +167,7 @@ main {
     cursor: pointer;
     color: #777;
     font-size: 1.2rem;
-    z-index: 2;
+    z-index: 1;
 }
 
 .password-wrapper i:hover {
@@ -400,7 +400,7 @@ main {
     }
 
     .change-pass-box {
-        max-width: 100%;
+        max-width: 80%;
     }
 
     .picture {
@@ -478,7 +478,7 @@ main {
     }
 
     #change-pass-btn {
-        width: 70%;
+        width: 45%;
         margin: 0 auto;
         display: block;
     }
