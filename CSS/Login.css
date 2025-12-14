@@ -94,7 +94,7 @@ body{
     margin-top: 30px;
 }
 /* เว้นระยะห่างของฟอนกับborderใน login,password โดยใช้ padding */
-input[type="username"], input[type="password"] {
+input[type="username"] {
     padding: 0 60px;
 }
 /* ส่วนของการจัดระเบียบของ forgot sign ที่อยู่ใน div describtion และ buttonLogin ที่ข้างในมี #login */
@@ -191,6 +191,33 @@ input[type="username"], input[type="password"] {
     height: 100%;
     object-fit: cover;
 }
+
+.password-wrapper {
+    position: relative;
+    width: auto;
+    margin-bottom: 1em;
+}
+
+.change-pass-input {
+    margin-bottom: 0;
+    padding: 0 60px;
+}
+/* จัดลูกตาให้อยู่ข้างใน input */
+.password-wrapper i {
+    position: absolute;
+    right: 7%;      
+    top: 67%;  
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #777;
+    font-size: 1.2rem;
+    z-index: 1;
+}
+
+.password-wrapper i:hover {
+    color: #38b6ff;
+}
+
 
 /*RESPONSIVE DESIGN*/
 @media (max-width: 1250px) {

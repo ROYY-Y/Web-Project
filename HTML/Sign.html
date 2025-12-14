@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-NEKOMA</title>
     <link rel="stylesheet" href="../CSS/Sign.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -35,16 +36,26 @@
 
                     <label for="password">Password</label>
                     <p class="input-err" id="password-err">Invalid Password</p>
-                    <input class="input-box" id="password" type="password" placeholder="Enter your  password">
+
+                    <div class="password-wrapper">
+                        <input class="input-box" id="password" name="password" type="password"
+                            placeholder="Enter your  password" >
+                        <i class="fa-solid fa-eye-slash toggle-eye" data-target="password"></i>
+                    </div>
 
                     <label for="Confirm password">Confirm password</label>
                     <p class="input-err" id="confirm-err">Password do not match</p>
-                    <input class="input-box" id="confirmpassword" type="password" placeholder="Comfirm your password">
-                
+
+                    <div class="password-wrapper">
+                        <input class="input-box" id="confirmpassword" name="confirmpassword" type="password"
+                            placeholder="Comfirm your password" >
+                        <i class="fa-solid fa-eye-slash toggle-eye" data-target="confirmpassword"></i>
+                    </div>
+
                 </div>
 
-                <div class="correct">                    
-                    <input type="checkbox" id ="term-check" >
+                <div class="correct">
+                    <input type="checkbox" id="term-check">
                     <p class="private">I understand in
                     <p class="privacy">term&privacy</p>
                     </p>

@@ -9,6 +9,19 @@ const alertBox = document.getElementById("aleart-box");
 
 localStorage.removeItem('token');
 
+const toggleEyes = document.querySelectorAll('.toggle-eye');
+
+toggleEyes.forEach(eye => {
+    eye.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const inputPass = document.getElementById(targetId);
+        // สลับ type ของ input
+        const type = inputPass.getAttribute('type') === 'password' ? 'text' : 'password';
+        inputPass.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+        this.classList.toggle('fa-eye');   
+    });
+});
 
 async function login() {
     try {

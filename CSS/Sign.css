@@ -118,6 +118,32 @@ input[type="checkbox"]{
     display: block;
 }
 
+.password-wrapper {
+    position: relative;
+    width: auto;
+    margin-bottom: 1em;
+}
+
+.change-pass-input {
+    margin-bottom: 0;
+    padding: 0 60px;
+}
+/* จัดลูกตาให้อยู่ข้างใน input */
+.password-wrapper i {
+    position: absolute;
+    right: 7%;      
+    top: 50%;  
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #777;
+    font-size: 1.2rem;
+    z-index: 1;
+}
+
+.password-wrapper i:hover {
+    color: #38b6ff;
+}
+
 #sign_in{
     width: 120px;
     height: 60px;

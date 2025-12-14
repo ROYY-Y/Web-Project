@@ -7,13 +7,16 @@
     <title>Login-NEKOMA</title>
     <link rel="stylesheet" href="../CSS/Login.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body> 
+<body>
     <div class="display">
         <!-- กรอบของรูปภาพ -->
         <div class="displayimg">
-            <div class="parentImg"><div class="img"><img src="../Img/Login/catnekoma.png"></div></div> 
+            <div class="parentImg">
+                <div class="img"><img src="../Img/Login/catnekoma.png"></div>
+            </div>
             <div class="fetishblue"><img src="../Img/Login/fetishbule.png"></div>
             <div class="fetishred"><img src="../Img/Login/fetishred.png"></div>
         </div>
@@ -25,12 +28,15 @@
                     <h1>Login to Nekoma</h1>
                 </div>
                 <label class="User" for="Username"></label>
-                <div id = "aleart-box">
-                    <p id = "Username-aleart">❗Invalid username or password</p>
+                <div id="aleart-box">
+                    <p id="Username-aleart">❗Invalid username or password</p>
                 </div>
                 <input id="Username" name="Username" type="username" placeholder="Username" required>
-                <label class="pass" for="Password"></label>
-                <input id="Password" name="Password" type="password" placeholder="Password" required>
+                <div class = "password-wrapper">
+                    <input class="change-pass-input" id="Password" name="Password" type="password"
+                        placeholder="Password" required>
+                    <i class="fa-solid fa-eye-slash toggle-eye" data-target="Password"></i>
+                </div>
             </div>
             <div class="onClick">
                 <div class="description">
@@ -51,4 +57,5 @@
     </div>
 </body>
 <script src="../JAVASCRIPT/Login.js"></script>
+
 </html>
