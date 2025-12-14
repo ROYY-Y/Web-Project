@@ -197,3 +197,85 @@ main{
         left: 0%;
     }
 }
+
+@media (max-width: 1024px) {
+    .home-box {
+        width: 50%;
+    }
+
+    .main-left {
+        padding-left: 2em;
+    }
+
+    #main-left-title {
+        font-size: 2.5em;
+    }
+
+    #main-left-text {
+        font-size: 1.2em;
+    }
+
+    .cards {
+        width: 130px;
+        height: 180px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    main {
+        flex-direction: column;
+    }
+
+    .home-box {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-left {
+        padding: 2em 1.5em;
+        gap: 2em;
+    }
+
+    /* text */
+    #main-left-title {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    #main-left-text {
+        font-size: 1.1em;
+        text-align: center;
+    }
+
+    /* cards */
+    .main-left-container-card {
+
+        align-items: center;
+        gap: 20px;
+    }
+
+    .cards {
+        width: 160px;
+        height: 210px;
+    }
+
+    /* contract */
+    .main-left-container-contract {
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    /* right side */
+    .main-right {
+        height: 250px;
+    }
+
+    #cloud1, #cloud2 {
+        width: 10em;
+        height: auto;
+    }
+}
