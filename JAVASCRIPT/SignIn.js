@@ -130,13 +130,16 @@ async function sendUser() {
             usernameErr.innerText = inputErrList[5]
             usernameErr.classList.add('visible')
             console.log(data.message)
+            return false
         } else {
             console.log(data.message)
             usernameErr.classList.remove('visible')
+            return true
         }
     }
     catch (err) {
         console.error(err)
+        return false
     }
 }
 
@@ -188,7 +191,8 @@ async function login() {
 signBtn.addEventListener('click', async () => {
     if (gobalCheck && termCheck.checked) {
         termErr.classList.remove('visible')
-        await sendUser()
+        const send_signin = await sendUser()
+        if(!send_signin) return
         await login()
     } else {
         if (!termCheck.checked) {
