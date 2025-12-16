@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const token = localStorage.getItem('token');
-  if (!token) return;
+  if (!token) window.location.href = 'Login.html';
 
   try {
     const res = await fetch('http://localhost:3000/statistic', {
